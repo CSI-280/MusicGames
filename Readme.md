@@ -62,12 +62,12 @@ We will be using more APIs as this project grows, but there are a few that we kn
 
 
 ## How to run (in progress)
-if youre confused so am i so please wait
+if youre confused so am I so please wait
 
 1. install 
 ```
-    pip install django
-    pip install djangorestframework
+    pip install django djangorestframework virtualenv pep8 autopep8 pylint django-cors-headers
+    npm install axios
 ```
 
 2. run
