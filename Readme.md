@@ -58,3 +58,24 @@ We will be using more APIs as this project grows, but there are a few that we kn
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+
+## How to run (in progress)
+if youre confused so am i so please wait
+
+1. install 
+```
+    pip install django
+    pip install djangorestframework
+```
+
+2. run
+```
+    python backend\src\manage.py runserver
+    cd frontend
+    npm start
+```
+
+
+    
