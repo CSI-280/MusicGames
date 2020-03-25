@@ -55,16 +55,16 @@ Then to get to the folder, simply do `cd Musicgames`
 As previously mentioned, this project uses Django and React. So we need to install those dependencies in order to run this on your local machine.
 Run these commands to install them.
 
-`pip install django djangorestframework virtualenv pep8 autopep8 pylint django-cors-headers
-npm install axios
-cd .\frontend\gui
-npm install`
+`pip install django djangorestframework virtualenv pep8 autopep8 pylint django-cors-headers`
+`npm install axios`
+`cd .\frontend\gui`
+`npm install`
 ### Start up the front and back end
 Now you should be able to run the files.
 For the front end, use 
 
-`cd .\frontend\gui
-npm start`
+`cd .\frontend\gui`
+`npm start`
 
 for the backend, in a new terminal in the project directory
 
