@@ -67,7 +67,7 @@ Now you should be able to run the files.
 For the front end, use 
 
 `cd .\frontend\gui`
-s
+
 `npm start`
 
 for the backend, in a new terminal in the project directory
