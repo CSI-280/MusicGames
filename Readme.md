@@ -74,6 +74,7 @@ if youre confused so am I so please wait
 ```
     python backend\src\manage.py runserver
     cd frontend
+    cd gui
     npm start
 ```
 
