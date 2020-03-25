@@ -56,14 +56,18 @@ As previously mentioned, this project uses Django and React. So we need to insta
 Run these commands to install them.
 
 `pip install django djangorestframework virtualenv pep8 autopep8 pylint django-cors-headers`
+
 `npm install axios`
+
 `cd .\frontend\gui`
+
 `npm install`
 ### Start up the front and back end
 Now you should be able to run the files.
 For the front end, use 
 
 `cd .\frontend\gui`
+s
 `npm start`
 
 for the backend, in a new terminal in the project directory
