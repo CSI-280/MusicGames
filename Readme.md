@@ -92,24 +92,4 @@ for the backend, in a new terminal in the project directory
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-
-
-## How to run (in progress)
-if youre confused so am I so please wait
-
-1. install 
-```
-    pip install django djangorestframework virtualenv pep8 autopep8 pylint django-cors-headers
-    npm install axios
-```
-
-2. run
-```
-    python backend\src\manage.py runserver
-    cd frontend
-    cd gui
-    npm start
-```
-
-
     
