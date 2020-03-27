@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css';
 import Applist from './components/list';
-import Game from './components/game'
-import $ from "jquery"
-
+import Game from './components/tic_tac_toe'
 
 function App() {
   return (
