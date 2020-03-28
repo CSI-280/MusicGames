@@ -33,8 +33,8 @@ class Applist extends React.Component {
         
         return (<>
             <h1> check console </h1>
-            <input id="clickMe" type="button" value="clickme" onClick= {() => this.login()} />
-            <input id="getiD" type="button" value="clickme" onClick= {() => this.idWant()} />
+            <input id="clickMe" type="button" value="login" onClick= {() => this.login()} />
+            <input id="getiD" type="button" value="log ID" onClick= {() => this.idWant()} />
             </>
         )
     }
