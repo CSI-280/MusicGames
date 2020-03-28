@@ -15,7 +15,7 @@ class Applist extends React.Component {
     
     /*temp for testing*/
     idWant(){
-        SpotifyClient.getSong()
+        SpotifyClient.getID()
     }
 
     componentDidMount() {
