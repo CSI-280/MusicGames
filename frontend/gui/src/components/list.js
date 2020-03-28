@@ -10,14 +10,16 @@ class Applist extends React.Component {
     /*MOVE TO LOGIN BUTTON */
     login(){   
         SpotifyClient.Login()
+        console.log('ran')
     }
     /*END LOGIN MOVE */
     
     /*temp for testing*/
     idWant(){
-        SpotifyClient.getID()
+        console.log(SpotifyClient.getID())
     }
 
+    
     componentDidMount() {
         axios.get("http://127.0.0.1:8000/api/") //subject to change
             .then(res => {

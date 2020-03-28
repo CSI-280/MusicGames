@@ -6,6 +6,9 @@ const SpotifyClient = {
     client_id : '42b56bb8489a418db8bd7d2c631b2eef',
     user_token : null,
     loged_in : false,
+    base_url : 'https://api.spotify.com',
+
+    // api doc : https://developer.spotify.com/documentation/web-api/reference/
 
 
     Login() {
@@ -26,7 +29,7 @@ const SpotifyClient = {
 
         //when message is recevied from other page
         login.onmessage = function(e) {
-            if (e.data == 'ready') {
+            if (e.data === 'ready') {
                 auth.postMessage('42b56bb8489a418db8bd7d2c631b2eef');
 
                 auth.close();
@@ -40,19 +43,82 @@ const SpotifyClient = {
         };
     },
 
-    getID() { 
-        axios.get('https://api.spotify.com/v1/me', {
+    
+    makeRequest(url_add){
+        return axios.get(this.base_url + url_add, {
             headers : {
                 Authorization : 'Bearer ' + this.user_token,
                 }
-            },)
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-        })
-    }    
+        },)
+    },
+
+
+    //albums
+    async getAlbum(albumID){
+        return await this.makeRequest('/v1/albums/' + albumID);
+    },
+
+    async getAlbumTracks(albumID){
+        return await this.makeRequest('/v1/albums/' + albumID +'/tracks');
+    },
+
+
+
+    //artist
+    async getArtist(ArtistID){
+        return await this.makeRequest('/v1/artists/' + ArtistID);
+    },
+    
+    async getArtistAlbums(ArtistID){
+        return await this.makeRequest('/v1/artists/' + ArtistID +'/albums');
+    },
+
+    async getArtistTopTracks(ArtistID){
+        return await this.makeRequest('/v1/artists/' + ArtistID + '/top-tracks ');
+    },
+
+
+
+    // get userdata
+    async getID() {
+        return await this.makeRequest('/v1/me');
+    },   
+
+    async getSong(songID) {
+        return await this.makeRequest('/v1/tracks/'+songID);
+    },
+
+    async getUsersPlaylist() {
+        return await this.makeRequest('/v1/me/playlists');
+    },
+
+
+
+    // browse tab data
+    async getCatagory(catagoryID) {
+        return await this.makeRequest('/v1/browse/categories/' + catagoryID);
+    },
+
+    async getCatagoryPlaylist(catagoryID) {
+        return await this.makeRequest('/v1/browse/categories/' + catagoryID + '/playlist');
+    },
+
+    async getCatagoryLIST() {
+        return await this.makeRequest('/v1/browse/categories/');
+    },
+
+    async getFeaturedPlaylists() {
+        return await this.makeRequest('/v1/browse/featured-playlists');
+    },
+
+    async getNewReleases(){
+        return await this.makeRequest('/v1/browse/new-releases');
+    },
+
+    async getRecomended(){
+        return await this.makeRequest('/v1/recommendations');
+    }
+
 }
 
 export default SpotifyClient;
