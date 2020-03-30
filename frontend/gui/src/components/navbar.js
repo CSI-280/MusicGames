@@ -8,15 +8,15 @@ function Navbar() {
             <img id="logo-header" style={imgStyle} src={Placeholder} />
             <h1 class="navbar-title font-weight--1" >Music Games</h1>
             <div class="navbar-nav-links font-weight--2">
-                <p style={linkStyle}>Home</p>
+                <p>Home</p>
                 <p>|</p>
-                <p style={linkStyle}>Points</p>
+                <p>Points</p>
                 <p>|</p>
-                <p style={linkStyle}>Games</p>
+                <p>Games</p>
                 <p>|</p>
-                <p style={linkStyle}>Login</p>
+                <p>Login</p>
                 <p>|</p>
-                <p style={linkStyle}> About </p>
+                <p> About </p>
             </div>
             {/* <div style={divStyle}> This can be used whenb we impliment react Router
                 <Link style={linkStyle} to="/">Home</Link>
@@ -40,10 +40,5 @@ const imgStyle = {
     display: 'inline-block',
 }
 
-const linkStyle = {
-    display: 'inline-block',
-    textDecoration: 'none',
-    margin: ''
-}
 
 export default Navbar
