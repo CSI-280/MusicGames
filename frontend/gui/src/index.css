@@ -1,0 +1,66 @@
+/* --------------------------------------------------------------------
+* navbar
+* --------------------------------------------------------------------*/
+#page-header-navbar{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+.navbar-title{
+    padding: 2rem;
+}
+.navbar-nav-links{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+}
+.navbar-nav-links p {
+    padding: 0 1rem;
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------
+* colors
+* --------------------------------------------------------------------*/
+
+.red{
+    background-color: #ff044b;
+    color: #000;
+}
+.orange{
+    background-color: #ff5c04;
+    color: #fff;
+}
+.green{
+    background-color: #04ff71;
+    color: #000;
+}
+
+/* --------------------------------------------------------------------
+* fonts
+* --------------------------------------------------------------------*/
+
+/* header */
+.font-weight--1{
+    font-size: 48px;
+}
+/* sub-header */
+.font-weight--2{
+    font-size: 32px;
+}
+/* body text */
+.font-weight--3{
+    font-size: 18px;
+}
+body{
+    color: #fff;
+}
+
+/* --------------------------------------------------------------------
+* elements
+* --------------------------------------------------------------------*/
+
+button{
+    border-radius: 32px;    /* we can play around with this */
+}

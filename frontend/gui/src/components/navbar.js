@@ -4,18 +4,18 @@ import Placeholder from './images/playerPlaceholder.png';
 
 function Navbar() {
     return (
-        <header style={headerStyle}>
-            <img style={imgStyle} src={Placeholder} />
-            <h1 style={titleStyle}>Music Games</h1>
-            <div style={divStyle}>
+        <header id="page-header-navbar" class="red">
+            <img id="logo-header" style={imgStyle} src={Placeholder} />
+            <h1 class="navbar-title font-weight--1" >Music Games</h1>
+            <div class="navbar-nav-links font-weight--2">
                 <p style={linkStyle}>Home</p>
-                <span> | </span>
+                <p>|</p>
                 <p style={linkStyle}>Points</p>
-                <span> | </span>
+                <p>|</p>
                 <p style={linkStyle}>Games</p>
-                <span> | </span>
+                <p>|</p>
                 <p style={linkStyle}>Login</p>
-                <span> | </span>
+                <p>|</p>
                 <p style={linkStyle}> About </p>
             </div>
             {/* <div style={divStyle}> This can be used whenb we impliment react Router
@@ -33,31 +33,11 @@ function Navbar() {
     )
 }
 
-const headerStyle = {
-    background: '#ff044b',
-    color: 'black',
-    textAlign: 'center',
-    padding: '10px',
-    fontSize: '1.5vw',
-}
-
 const imgStyle = {
     height: '5vw',
     width: 'auto',
     float: 'left',
     display: 'inline-block',
-}
-
-const titleStyle = {
-    fontSize: '2vw',
-    display: 'inline-block',
-}
-const divStyle = {
-    textAlign: 'right',
-    display: 'inline-block',
-    float: 'right',
-    paddingRight: '1vw',
-    width: '33.33333%'
 }
 
 const linkStyle = {
