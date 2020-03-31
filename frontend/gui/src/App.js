@@ -7,8 +7,6 @@ import Home from './components/home';
 import About from './components/about';
 
 
-
-
 function App() {
   return (
     <Router>
@@ -18,6 +16,7 @@ function App() {
         <Route path="/About" component={About} />
       </div>
     </Router>
+
   );
 }
 
