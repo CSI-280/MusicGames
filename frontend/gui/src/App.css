@@ -1,0 +1,10 @@
+html, body {
+    /* https://fonts.adobe.com/fonts/aileron#details-section */
+    font-family: aileron, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    /* background-color:#29292A; */
+    background-color: black;
+}
