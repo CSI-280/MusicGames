@@ -67,6 +67,8 @@ Run these commands to install them.
 
 `npm istall react-router-dom`
 
+`npm install jquery`
+
 ### Start up the front and back end
 Now you should be able to run the files.
 For the front end, use 

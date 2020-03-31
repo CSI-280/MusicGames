@@ -12,7 +12,7 @@ function Navbar() {
                 <p>|</p>
                 <p>Points</p>
                 <p>|</p>
-                <p>Games</p>
+                <p><Link to="/gamehub">Games</Link></p>
                 <p>|</p>
                 <p>Login</p>
                 <p>|</p>

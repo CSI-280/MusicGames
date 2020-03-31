@@ -5,6 +5,7 @@ import Applist from './components/list';
 import Navbar from './components/navbar';
 import Home from './components/home';
 import About from './components/about';
+import GameHub from './Pages/games/GameHub';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Route exact path = "/" component={Home} />
+        <Route exact path = "/GameHub" component={GameHub} />
         <Route path="/About" component={About} />
       </div>
     </Router>
