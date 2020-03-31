@@ -1,4 +1,4 @@
-# Music Games :musical_note:
+# Extended Play :musical_note:
 The focus of this project is to create a website where you play minigames to make “money” and spend it on adding songs to a music playlist
 Some of these games include:    
    * Tic-tac-toe
@@ -48,7 +48,9 @@ We will be using more APIs as this project grows, but there are a few that we kn
 ## Setup
 It's recommended that you use [git bash](https://gitforwindows.org/) for cloning the repo and installing dependencies.
 ### Clone the repo
-To get the actual code for this, you need to clone the repo.  To clone the repo, simply enter the command `git clone https://github.com/CSI-280/MusicGames.git`
+To get the actual code for this, you need to clone the repo.  To clone the repo, simply enter the command 
+
+`git clone https://github.com/CSI-280/MusicGames.git`
 
 Then to get to the folder, simply do `cd Musicgames`
 ### Install Dependencies
@@ -62,6 +64,9 @@ Run these commands to install them.
 `cd .\frontend\gui`
 
 `npm install`
+
+`npm istall react-router-dom`
+
 ### Start up the front and back end
 Now you should be able to run the files.
 For the front end, use 
