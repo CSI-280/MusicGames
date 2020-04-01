@@ -120,9 +120,11 @@ function markBox(box){
 //click detector for when the user clicks a box, also calls AI to play
 $(document).click(function(event) {
     var element = $(event.target);
-    if (element.prop("tagName") === "TD" ){
-      markBox(element);
-      setTimeout(aiPlay, 500);
+    if (element.prop("tagName") === "TD"){
+      if (element.parent().parent().attr("id") === "board"){
+        markBox(element);
+        setTimeout(aiPlay, 500);
+      }
     }
 });
 
