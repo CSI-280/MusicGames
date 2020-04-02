@@ -37,8 +37,12 @@
 
 .won{
   background-color: red;
+  color: white;
+  border-color: white;
 }
 
 .clear{
-  background-color: white;
+  background-color: black;
+  color: black;
+  border-color: black;
 }
