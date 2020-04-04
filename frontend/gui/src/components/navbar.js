@@ -1,7 +1,7 @@
 import React from 'react';
 import Placeholder from './images/playerPlaceholder.png';
 import { Link } from 'react-router-dom';
-import Player from './playler';
+import Player from './player/playler';
 
 
 function Navbar() {
