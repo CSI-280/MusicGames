@@ -27,10 +27,14 @@ function GameNav() {
                     <tbody>
                         <tr>
                             <td><p><Link to="/TicTacToe">Tic Tac Toe</Link></p></td>
+                        </tr>
+                        <tr>
                             <td><p><Link to="/GuessSong">Guess the Song</Link></p></td>
                         </tr>
                         <tr>
                             <td><p><Link to="/GuessArtist">Guess the Artist</Link></p></td>
+                        </tr>
+                        <tr>
                             <td><p><Link to="/Connect4">Connect 4</Link></p></td>
                         </tr>
                     </tbody>
