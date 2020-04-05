@@ -1,23 +1,25 @@
 .centerGame{
   text-align: center;
+  color: white;
 }
 
 .top td{
-  border-top: 1px solid black;
+  border-top: 1px solid white;
 }
 
 .bottom td{
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
 }
 
 .center{
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
 }
 
 .board{
   border-collapse: collapse;
   margin: auto;
+  color: white;
 }
 
 .board td{
@@ -29,13 +31,18 @@
 }
 
 .reset{
-  border: 2px solid black;
+  border: 2px solid white;
+  color: white;
 }
 
 .won{
   background-color: red;
+  color: white;
+  border-color: white;
 }
 
 .clear{
-  background-color: white;
+  background-color: black;
+  color: black;
+  border-color: black;
 }
