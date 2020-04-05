@@ -17,7 +17,7 @@ function GameNav() {
             <Route exact path = "/GuessArtist" component={GuessArtist} />
             <Route path="/Connect4" component={Connect4} />
             <header style={tmpStyle}>
-                <p><Link to="/GameHub">Game Hub</Link></p>
+                <p><Link to="/">Game Hub</Link></p>
                 <p>|</p>
                 <p><Link to="/TicTacToe">Tic Tac Toe</Link></p>
                 <p>|</p>

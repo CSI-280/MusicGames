@@ -3,11 +3,10 @@ import './tic_tac_toe.css'
 import $ from "jquery"
 
 //variables that need to be referenced from many places
-var playerMark = "♪";
+var playerMark = "X";
 var turnsPlayed = 0;
 var board = [[0,0,0],[0,0,0],[0,0,0]];
 var gameWon = false;
-var difficulty=0;
 
 //returns a jquery of either a single td or a group of tds, corresponding to
 //a box in the grid used for game
@@ -40,7 +39,7 @@ function winSequence(winner, toMark){
   } else{
     console.log(winner + " won!");
     for (var i = 0; i < 9; i += 2){
-      $(findBox(toMark[i], toMark[i + 1])).css("color", "green");
+      $(findBox(toMark[i], toMark[i + 1])).css("color", "red");
     }
   }
   turnsPlayed = 0;
@@ -85,7 +84,7 @@ function checkIfOver(){
   }
 }
 
-//make the AI take a turn if the game has not been won yet
+//make the AI take a turn if the game has not been one yet
 function aiPlay(){
   if (!gameWon){
     var boxFound = false;
@@ -103,38 +102,27 @@ function aiPlay(){
 
 //mark a single box with the current turn marker, check if the game is over
 function markBox(box){
+  $(box).html(playerMark);
 
   var row = $(box).parent().prop("rowIndex");
   var cell = $(box).prop("cellIndex");
+  board[row][cell] = playerMark;
 
-  console.log(board[row][cell]);
-
-  if (board[row][cell] != "♫" && board[row][cell] != "♪")
-  {
-    board[row][cell] = playerMark;
-    $(box).html(playerMark);
-    if (playerMark == "♪"){
-      playerMark = "♫";
-    } else{
-      playerMark = "♪";
-    }
-    turnsPlayed++;
-    checkIfOver();
-    return true;
+  if (playerMark === "X"){
+    playerMark = "O";
+  } else{
+    playerMark = "X";
   }
-  return false;
+  turnsPlayed++;
+  checkIfOver();
 }
 
 //click detector for when the user clicks a box, also calls AI to play
 $(document).click(function(event) {
     var element = $(event.target);
     if (element.prop("tagName") === "TD" ){
-      var played=markBox(element);
-      console.log(played);
-      if (played)
-      {
-        setTimeout(aiPlay, 500);
-      }
+      markBox(element);
+      setTimeout(aiPlay, 500);
     }
 });
 
@@ -142,6 +130,7 @@ $(document).click(function(event) {
 class Game extends React.Component {
   constructor(props){
     super(props);
+  //  this.setBoard = this.setBoard.bind(this);
     this.resetBoard = this.resetBoard.bind(this);
   }
 
@@ -149,7 +138,7 @@ class Game extends React.Component {
     var boxes = findBox("all", "all");
     boxes.forEach( box => {
       $(box).html("");
-      $(box).html("").css("color", "white");
+      $(box).html("").css("color", "black");
     });
 
     $("#resetButton").addClass("clear");
