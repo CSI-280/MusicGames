@@ -33,7 +33,7 @@ th{
   text-align: center;
   float: left;
   border-color: white;
-  max-width: 30rem;
+  max-width: 20rem;
   margin-top: 1rem;
   position: static;
 }
@@ -51,7 +51,7 @@ th{
 .games-pane td{
   transition: transform .2s; /* Animation */
   border-radius: 25px;
-  padding: 1rem;
+  padding: 2rem;
   border: 6px solid var(--orange);
 }
 
@@ -69,4 +69,15 @@ th{
 .games-pane table{
   background-color: white;
   border: 1px solid white;
+}
+
+td {
+    overflow: hidden;
+    padding: 2rem;
+}
+
+td a {
+  display: block;
+  margin: -10em;
+  padding: 10em;
 }

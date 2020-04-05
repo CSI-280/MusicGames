@@ -21,21 +21,21 @@ function GameNav() {
                 <table className="games-pane">
                     <thead>
                         <tr>
-                            <th colSpan="2"><p><Link to="/">Shall we play a game?</Link></p></th>
+                            <th colSpan="2"><Link to="/">Shall we play a game?</Link></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><p><Link to="/TicTacToe">Tic Tac Toe</Link></p></td>
+                            <td className="select-game"><Link to="/TicTacToe">Tic Tac Toe</Link></td>
                         </tr>
                         <tr>
-                            <td><p><Link to="/GuessSong">Guess the Song</Link></p></td>
+                            <td className="select-game"><Link to="/GuessSong">Guess the Song</Link></td>
                         </tr>
                         <tr>
-                            <td><p><Link to="/GuessArtist">Guess the Artist</Link></p></td>
+                            <td className="select-game"><Link to="/GuessArtist">Guess the Artist</Link></td>
                         </tr>
                         <tr>
-                            <td><p><Link to="/Connect4">Connect 4</Link></p></td>
+                            <td className="select-game"><Link to="/Connect4">Connect 4</Link></td>
                         </tr>
                     </tbody>
                 </table>
