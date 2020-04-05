@@ -148,7 +148,7 @@ class Game extends React.Component {
 
   render() {
     return (
-      <div class="centerGame">
+      <div className="centerGame">
       <h2>So you have chosen {this.props.name}</h2>
       <br />
       <table className="board">
@@ -165,7 +165,7 @@ class Game extends React.Component {
         </tbody>
       </table>
       <br />
-      <button class="reset clear" id="resetButton" onClick={this.resetBoard}>Play again!</button>
+      <button className="reset clear" id="resetButton" onClick={this.resetBoard}>Play again!</button>
       </div>
     );
   }
