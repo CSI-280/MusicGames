@@ -8,7 +8,7 @@ function Navbar() {
     return (
         <header id="page-header-navbar" class="red">
             <Player />
-            <h1 class="navbar-title font-weight--1" >Extended Play</h1>
+            <Link to="/"><h1 class="navbar-title font-weight--1">Extended Play</h1></Link>
             <div class="navbar-nav-links font-weight--2">
                 <p><Link to="/">Home</Link></p>
                 <p>|</p>
@@ -18,7 +18,7 @@ function Navbar() {
                 <p>|</p>
                 <p>Login</p>
                 <p>|</p>
-                <p><Link to="/about">About</Link></p>
+                <p><Link to="/about" >About</Link></p>
             </div>
         </header>
     )
