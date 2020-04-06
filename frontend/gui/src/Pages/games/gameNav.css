@@ -1,0 +1,83 @@
+:root {
+  --orange: #ff5c04;
+  --pink: #ff044b;
+  --green: #04ff71;
+}
+
+@keyframes button-hover {
+  to {
+    background-color: var(--orange);
+    border: 6px solid black;
+  }
+}
+
+@keyframes button-hover-text {
+  to {
+    color: black;
+  }
+}
+
+td{
+  font: aileron;
+}
+
+th{
+  font-weight: normal;
+  font: aileron;
+}
+
+.games-pane{
+  border-collapse: none;
+  border-spacing: 1rem;
+  margin: auto;
+  text-align: center;
+  float: left;
+  border-color: white;
+  max-width: 20rem;
+  margin-top: 1rem;
+  position: static;
+}
+
+.games-pane a{
+  color: white;
+  text-decoration: none;
+  font-size: x-large;
+}
+
+.games-pane a:hover{
+  text-decoration: none;
+}
+
+.games-pane td{
+  transition: transform .2s; /* Animation */
+  border-radius: 25px;
+  padding: 2rem;
+  border: 6px solid var(--orange);
+}
+
+.games-pane td:hover{
+  transform: scale(1.1);
+  animation: button-hover .5s;
+  animation-fill-mode: forwards;
+}
+
+.games-pane td:hover a{
+  animation: button-hover-text .5s;
+  animation-fill-mode: forwards;
+}
+
+.games-pane table{
+  background-color: white;
+  border: 1px solid white;
+}
+
+td {
+    overflow: hidden;
+    padding: 2rem;
+}
+
+td a {
+  display: block;
+  margin: -10em;
+  padding: 10em;
+}
