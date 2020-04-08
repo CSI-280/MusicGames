@@ -2,7 +2,9 @@ import React from 'react';
 
 function con4() {
     return (
-      <h2>Connect 4</h2>
+      <div class="game-board">
+        <h2 class="orange">Connect 4</h2>
+      </div>
     )
 }
 export default con4

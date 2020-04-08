@@ -1,10 +1,6 @@
-.centerGame{
-  text-align: center;
-  margin-left: 30rem;
-  margin-top: 1rem;
-  position: absolute;
-  color: white;
-}
+/* --------------------------------------------------------------------
+* tic-tac-toe board
+* --------------------------------------------------------------------*/
 
 .top td{
   border-top: 1px solid white;
@@ -39,7 +35,7 @@
 }
 
 .won{
-  background-color: red;
+  background-color: #ff044b;
 }
 
 .clear{

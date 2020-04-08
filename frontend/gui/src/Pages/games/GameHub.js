@@ -1,10 +1,11 @@
 import React from 'react';
 import GameNav from './gameNav';
+import '../../index.css';
 
 
 function Games() {
     return (
-        <div>
+        <div class="game-body top-margin--1">
             <GameNav />
         </div>
     )

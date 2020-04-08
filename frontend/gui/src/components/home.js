@@ -4,7 +4,7 @@ import bee from './images/Bee.png';
 
 function Home () {
     return (
-        <div>
+        <div class="test">
             <p>According to all known laws
             of aviation,
             
