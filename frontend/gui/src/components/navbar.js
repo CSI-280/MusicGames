@@ -15,11 +15,10 @@ function Navbar() {
                 <p>|</p>
                 <p><Link to="/gamehub">Games</Link></p>
                 <p>|</p>
-                <p>Login</p>
-                <p>|</p>
                 <p><Link to="/about">About</Link></p>
+                <p>|</p>
+                <GoogleLogin />
             </div>
-            <GoogleLogin />
         </header>
     )
 }
