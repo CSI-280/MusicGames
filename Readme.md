@@ -71,8 +71,9 @@ Run these commands to install them.
 
 `npm install react-google-login`
 
-Note that you might have to modify your package.json.
-Open package.json
+#### You might need to update package.json
+You can find this file in frontend/gui/package.json
+Open the file. We only need to modify a single line in this file.
 This is what it will look like before (if its wrong)
 
 ```json
@@ -87,12 +88,13 @@ This is what it will look like before (if its wrong)
 The fix for this is simple, all you have to do is change one line:
 ```json
 "scripts": {
-    "start": "set HTTPS=true&&react-scripts start",
+    "start": "set HTTPS=true&&react-scripts start", //This is the updated line!!
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
 ```
+We need to change this in order to use the google sign in api, so it is important that you do this, or else you won't be able to sign in!
 
 ### Start up the front and back end
 Now you should be able to run the files.
