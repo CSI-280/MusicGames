@@ -69,6 +69,31 @@ Run these commands to install them.
 
 `npm install jquery`
 
+`npm install react-google-login`
+
+Note that you might have to modify your package.json.
+Open package.json
+This is what it will look like before (if its wrong)
+
+```json
+"scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  ```
+
+The fix for this is simple, all you have to do is change one line:
+```json
+"scripts": {
+    "start": "set HTTPS=true&&react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+```
+
 ### Start up the front and back end
 Now you should be able to run the files.
 For the front end, use 
