@@ -1,6 +1,7 @@
 import React from 'react';
 import Placeholder from './images/playerPlaceholder.png';
 import { Link } from 'react-router-dom';
+import GoogleLogin from './googleSignIn';
 
 function Navbar() {
     return (
@@ -18,6 +19,7 @@ function Navbar() {
                 <p>|</p>
                 <p><Link to="/about">About</Link></p>
             </div>
+            <GoogleLogin />
         </header>
     )
 }
