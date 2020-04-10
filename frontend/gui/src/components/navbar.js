@@ -15,9 +15,9 @@ function Navbar() {
                 <p>|</p>
                 <p><Link to="/gamehub">Games</Link></p>
                 <p>|</p>
-                <p><Link to="/about">About</Link></p>
+                <p><Link to="/profile">Profile</Link></p>
                 <p>|</p>
-                <GoogleLogin />
+                <p><Link to="/about">About</Link></p>
             </div>
         </header>
     )
