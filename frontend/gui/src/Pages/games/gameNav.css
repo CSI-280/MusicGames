@@ -26,6 +26,11 @@ th{
   font: aileron;
 }
 
+.game-body{
+  display: grid;
+  grid-template-columns: 25vw auto;
+}
+
 .games-pane{
   display: flex;
   flex-direction: column;
@@ -44,6 +49,10 @@ th{
   border-radius: 25px;
   padding: 2rem;
   border: 6px solid var(--orange);
+}
+
+.select-game {
+  font-size: 24px;
 }
 
 .games-pane div:hover{
