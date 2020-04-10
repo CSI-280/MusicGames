@@ -1,10 +1,23 @@
 import React from 'react';
 import Placeholder from './images/playerPlaceholder.png';
 import { Link } from 'react-router-dom';
-import GoogleLogin from './googleSignIn';
+import GoogleLogin from './profile.js';
 
-function Navbar() {
-    return (
+class Navbar extends React.Component {
+    
+    userInfo = {
+        fullName: "",
+        firstName: "",
+        email: "",
+        id: "",
+        profilePic: "",
+        signedIn: false,
+        points: 0}
+
+    
+    render() {        
+       let user = this.userInfo;
+        return (
         <header id="page-header-navbar" class="red">
             <img id="logo-header" style={imgStyle} src={Placeholder} />
             <h1 class="navbar-title font-weight--1" >Extended Play</h1>
@@ -13,14 +26,15 @@ function Navbar() {
                 <p>|</p>
                 <p>Points</p>
                 <p>|</p>
-                <p><Link to="/gamehub">Games</Link></p>
+                <p><Link to={{pathname:"/gamehub", state: {user}}}>Games</Link></p>
                 <p>|</p>
-                <p><Link to="/profile">Profile</Link></p>
+                <p><Link to={{pathname:"/profile", state: {user}}}>Profile</Link></p>
                 <p>|</p>
-                <p><Link to="/about">About</Link></p>
+                <p><Link to={{pathname:"/about", state: {user}}}>About</Link></p>
             </div>
         </header>
     )
+    }
 }
 
 const imgStyle = {

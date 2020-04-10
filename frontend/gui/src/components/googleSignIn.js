@@ -1,55 +1,66 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
-import gLogo from './images/googleLogo.png';
-import blackGLogo from './images/blackGoogleLogo.png';
- 
- 
-function GoogleLoginExport() {
-    const responseGoogle = (response) => {
-    //Json returned from logging in
-    console.log(response);
 
-    //Google ID
-    var googleId = response.googleId;
-    console.log(googleId);
 
-    //Name
-    var name = response.Qt.Ad;
-    console.log(name);
-
-    //Email
-    var email = response.Qt.zu;
-    console.log(email);
-
-    }
+class Profile extends React.Component {
     
-    return (
+    constructor(props) {
+        super(props);
+        this.state = {
+            fullName: "",
+            firstName: "",
+            email: "",
+            id: "",
+            profilePic: "",
+            signedIn: false
+        };
+    }
+
+    responseGoogle = (response) => {
+        //console.log(response);
+
+        this.setState({
+            fullName: response.profileObj.name,
+            firstName: response.profileObj.givenName,
+            email: response.profileObj.email,
+            id: response.profileObj.googleId,
+            profilePic: response.profileObj.imageUrl,
+            signedIn: true,
+        });
+
+        //this.forceUpdate();
+    }
         
-    <React.Fragment>
-        <GoogleLogin
-        clientId="28472414383-unhi5oj95o9l01b0tj379th23g7diu1k.apps.googleusercontent.com"
-        render={renderProps => (
-            <p onClick={renderProps.onClick} disabled={renderProps.disabled} style={{cursor: 'pointer'}}>Login</p>
-          )}
-        onSuccess={responseGoogle}
-        onFailure={responseGoogle}
-        isSignedIn={true}
-       
-        cookiePolicy={'single_host_origin'}
-        />
-         
-    </React.Fragment>
-    )
+        render() {
+            let content;
+            var loggedIn = this.state.signedIn;
+            if (!loggedIn) {
+                content =
+                    <GoogleLogin
+                    clientId="28472414383-unhi5oj95o9l01b0tj379th23g7diu1k.apps.googleusercontent.com"
+                    render={renderProps => (
+                        <p onClick={renderProps.onClick} disabled={renderProps.disabled} style={{cursor: 'pointer'}}>Login</p>
+                    )}
+                    onSuccess={this.responseGoogle}
+                    onFailure={this.responseGoogle}
+                    isSignedIn={true}
+                
+                    cookiePolicy={'single_host_origin'}
+                    />
+            }
+            else {
+                content =
+                    <React.Fragment>
+                        <p>{this.state.firstName}</p>
+                    </React.Fragment>
+            }
+
+        return (   
+            <React.Fragment>
+                {content}
+            </React.Fragment>
+        );
+    }
 }
 
-
-const loginStyle = {
-    backgroundColor: 'Transparent',
-    backgroundRepeat:'no-repeat',
-    border: 'solid 2px',
-    cursor:'pointer',
-    overflow: 'hidden',
-    outline:'none'
-}
-
- export default GoogleLoginExport;
+export default Profile;

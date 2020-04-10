@@ -4,46 +4,37 @@ import GoogleLogin from 'react-google-login';
 
 class Profile extends React.Component {
     
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: "",
-            email: "",
-            id: "",
-            signedIn: false
-        };
-    }
 
     responseGoogle = (response) => {
-        console.log(response);
-        console.log("here");
+        //console.log(response);
 
-        this.setState({
-            name: response.Qt.Ad,
-            email: response.Qt.zu,
-            id: response.googleId,
-            signedIn: true,
-        });
-        console.log("making True");
-        this.signedIn = true; 
-        console.log(this.state.signedIn);
+        //populating userInfo from navbar :)
+        this.props.location.state.user.fullName = response.profileObj.name;
+        this.props.location.state.user.firstName = response.profileObj.givenName;
+        this.props.location.state.user.email = response.profileObj.email;
+        this.props.location.state.user.id = response.profileObj.googleId;
+        this.props.location.state.user.profilePic = response.profileObj.imageUrl;
+        this.props.location.state.user.signedIn = true;
 
-        
-        console.log(this.signedIn);
-
-        console.log(this.state.id);
-
-        console.log(this.state.name);
-
-        console.log(this.state.email);
-
+        //make the page re-render
+        this.forceUpdate();
     }
         
         render() {
             let content;
-            console.log(this.state.signedIn);
-            if (!this.state.signedIn) {
-                console.log("look at me");
+            var loggedIn = this.props.location.state.user.signedIn;
+
+            if (loggedIn) {
+                content =
+                    <React.Fragment>
+                        <img src={this.props.location.state.user.profilePic}></img>
+                        <h3>Name: {this.props.location.state.user.firstName}</h3>
+                        <h3>Email: {this.props.location.state.user.email}</h3>
+                        <h3>Points: {this.props.location.state.user.points}</h3>
+                        
+                    </React.Fragment>
+            }
+            else {
                 content =
                     <GoogleLogin
                     clientId="28472414383-unhi5oj95o9l01b0tj379th23g7diu1k.apps.googleusercontent.com"
@@ -56,13 +47,6 @@ class Profile extends React.Component {
                 
                     cookiePolicy={'single_host_origin'}
                     />
-            }
-            else {
-                console.log("you prop dont see me");
-                content =
-                    <React.Fragment>
-                        <h3>Name: {this.state.name}</h3>
-                    </React.Fragment>
             }
 
         return (   
