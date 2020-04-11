@@ -48,20 +48,24 @@ class Applist extends React.Component {
 
         var csrftoken = this.getCookie('csrftoken');
 
-        axios.defaults.xsrfCookieName = csrftoken
-        axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
-
-
         axios.get("http://127.0.0.1:8000/data/user/1") //subject to change
             .then(res => {
                 console.log(res.data)
             })
 
-        axios.post("http://127.0.0.1:8000/data/createUser", {'db_id' : "1"},) //subject to change
+        axios.post("http://127.0.0.1:8000/data/createUser/", 
+            {'db_id' : "1"}, 
+            {headers: {
+                "X-CSRFTOKEN" : csrftoken
+            }, 
+            credentials: 'include'
+        }) //subject to change
+            
             .then(res => {
                 console.log(res.data)
-                
-                
+            })
+            .catch(err => {
+                console.log(err.response)
             })
     }
     
