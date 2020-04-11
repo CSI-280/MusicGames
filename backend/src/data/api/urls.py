@@ -1,9 +1,10 @@
 from django.urls import path
 
-from .views import AricalsDetailView, AricalsListView, secretlView
+from .views import secretlView, userView, userListView, createUserView
 
 urlpatterns = [
-    path('ari/', AricalsListView.as_view()),
-    path('ari/<pk>', AricalsDetailView.as_view()),
-    path('secret/', secretlView.as_view())
+    path('secret/', secretlView.as_view()),
+    path('user/', userListView.as_view()),
+    path('user/<pk>', userView.as_view()),
+    path('createUser', createUserView.as_view()),
 ]

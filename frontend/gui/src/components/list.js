@@ -10,23 +10,58 @@ class Applist extends React.Component {
     /*MOVE TO LOGIN BUTTON */
     login(){   
         SpotifyClient.Login()
-        console.log('ran')
     }
     /*END LOGIN MOVE */
     
     /*temp for testing*/
     idWant(){
-        console.log(SpotifyClient.getID())
+        //console.log(SpotifyClient.getID())
     }
 
     
+    
+    
+    //https://docs.djangoproject.com/en/3.0/ref/csrf/
+    getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+
+
+        
+    }
+    
+    
+
+
     componentDidMount() {
-        axios.get("http://127.0.0.1:8000/api/") //subject to change
+
+        var csrftoken = this.getCookie('csrftoken');
+
+        axios.defaults.xsrfCookieName = csrftoken
+        axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+
+
+        axios.get("http://127.0.0.1:8000/data/user/1") //subject to change
             .then(res => {
-                this.setState({
-                    articles: res.data
-                })
                 console.log(res.data)
+            })
+
+        axios.post("http://127.0.0.1:8000/data/createUser", {'db_id' : "1"},) //subject to change
+            .then(res => {
+                console.log(res.data)
+                
+                
             })
     }
     
