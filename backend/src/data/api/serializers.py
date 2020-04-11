@@ -13,4 +13,4 @@ class secretSerialziers(serializers.ModelSerializer):
 class userSerialziers(serializers.ModelSerializer):
     class Meta:
         model = user
-        fields = ('db_id', 'public_access_key', 'username', 'points')
+        fields = ('id', 'g_id','public_access_key', 'username', 'points')

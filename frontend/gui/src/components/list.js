@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import SpotifyClient from '../SpotifyClient'
+import userClient from '../userClient'
+
 
 class Applist extends React.Component {
     state = {
@@ -52,21 +54,22 @@ class Applist extends React.Component {
             .then(res => {
                 console.log(res.data)
             })
-
-        axios.post("http://127.0.0.1:8000/data/createUser/", 
-            {'db_id' : "1"}, 
-            {headers: {
-                "X-CSRFTOKEN" : csrftoken
-            }, 
-            credentials: 'include'
-        }) //subject to change
+        
+            this.id = 1;
+        axios.post("http://127.0.0.1:8000/data/login/", 
+            JSON.stringify({'google_id' : this.id})
+            ) //subject to change
             
             .then(res => {
                 console.log(res.data)
+                userClient.goog_id = this.id
+                userClient.loged_in = true
             })
             .catch(err => {
                 console.log(err.response)
             })
+
+        console.log(userClient.getUsername())
     }
     
 
