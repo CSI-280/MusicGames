@@ -6,6 +6,7 @@ import TicTacToe from './../../components/tic_tac_toe';
 import GuessSong from './GuessSong';
 import GuessArtist from './GuessArtist';
 import Connect4 from './Connect4';
+import './gameNav.css'
 
 
 function GameNav() {
@@ -16,25 +17,33 @@ function GameNav() {
             <Route path="/GuessSong" component={GuessSong} />
             <Route exact path = "/GuessArtist" component={GuessArtist} />
             <Route path="/Connect4" component={Connect4} />
-            <header style={tmpStyle}>
-                <p><Link to="/">Game Hub</Link></p>
-                <p>|</p>
-                <p><Link to="/TicTacToe">Tic Tac Toe</Link></p>
-                <p>|</p>
-                <p><Link to="/GuessSong">Guess the Song</Link></p>
-                <p>|</p>
-                <p><Link to="/GuessArtist">Guess the Artist</Link></p>
-                <p>|</p>
-                <p><Link to="/Connect4">Connect 4</Link></p>
+            <header>
+                <table className="games-pane">
+                    <thead>
+                        <tr>
+                            <th colSpan="2"><Link to="/">Shall we play a game?</Link></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td className="select-game"><Link to="/TicTacToe">Tic Tac Toe</Link></td>
+                        </tr>
+                        <tr>
+                            <td className="select-game"><Link to="/GuessSong">Guess the Song</Link></td>
+                        </tr>
+                        <tr>
+                            <td className="select-game"><Link to="/GuessArtist">Guess the Artist</Link></td>
+                        </tr>
+                        <tr>
+                            <td className="select-game"><Link to="/Connect4">Connect 4</Link></td>
+                        </tr>
+                    </tbody>
+                </table>
             </header>
         </Router>
-        
+
 
     )
-}
-
-const tmpStyle = {
-    display: 'inline-block'
 }
 
 export default GameNav;
