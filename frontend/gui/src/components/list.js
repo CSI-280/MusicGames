@@ -23,53 +23,16 @@ class Applist extends React.Component {
     
     
     
-    //https://docs.djangoproject.com/en/3.0/ref/csrf/
-    getCookie(name) {
-        var cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i].trim();
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-
-
-        
-    }
+    
     
     
 
 
     componentDidMount() {
-
-        var csrftoken = this.getCookie('csrftoken');
-
-        axios.get("http://127.0.0.1:8000/data/user/1") //subject to change
-            .then(res => {
-                console.log(res.data)
-            })
+            let id = 1;
+            userClient.login(id)
+            console.log(userClient.getUserData())
         
-            this.id = 1;
-        axios.post("http://127.0.0.1:8000/data/login/", 
-            JSON.stringify({'google_id' : this.id})
-            ) //subject to change
-            
-            .then(res => {
-                console.log(res.data)
-                userClient.goog_id = this.id
-                userClient.loged_in = true
-            })
-            .catch(err => {
-                console.log(err.response)
-            })
-
-        console.log(userClient.getUsername())
     }
     
 
