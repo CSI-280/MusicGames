@@ -12,7 +12,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Applist/>
         <Navbar />
         <Route exact path = "/" component={Home} />
         <Route exact path = "/GameHub" component={GameHub} />
