@@ -1,12 +1,9 @@
 import React from 'react';
 import Placeholder from './images/playerPlaceholder.png';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
 import GoogleLogin from './profile.js';
-=======
 import Player from './player/playler';
 
->>>>>>> temp
 
 class Navbar extends React.Component {
     
