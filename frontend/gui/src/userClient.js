@@ -37,9 +37,10 @@ const UserClient = {
 
     // set user username
     async setUsername(new_name){
-        if (!new_name === this.username){
+        if (new_name !== this.username){
             await this.makePostRequest('setUserData/', {'username': new_name})
             this.username = new_name
+            
         }
     },
 
@@ -106,7 +107,7 @@ const UserClient = {
     },
 
     // get user g_id
-    async getPublicAccessKey(){
+    async getGooogleID(){
         var incoming = await this.getUserData()
         this.goog_id = incoming.data['g_id']
         return incoming.data['g_id']

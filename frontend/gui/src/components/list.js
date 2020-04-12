@@ -20,24 +20,17 @@ class Applist extends React.Component {
         //console.log(SpotifyClient.getID())
     }
 
-    
-    
-    
-    
-    
-    
-
 
     componentDidMount() {
-            let id = 1;
-            userClient.login(id)
-            console.log(userClient.getUserData())
-        
+            userClient.login(1)
+            console.log(userClient.getUserData())  
+            console.log(userClient.setUsername('danny123'))
+            
     }
     
 
     render() {
-        
+            
         return (<>
             <h1> check console </h1>
             <input id="clickMe" type="button" value="login" onClick= {() => this.login()} />
