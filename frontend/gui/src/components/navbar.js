@@ -19,7 +19,7 @@ class Navbar extends React.Component {
     render() {        
        let user = this.userInfo;
        // You can use this.props.location.state.user.VARIABLE to access the users data on any page.
-       // Make sure you make it a class (this is a class "class name extends React.Component")
+       // Its best to make your component a class (this is a class "class name extends React.Component")
         return (
         <header id="page-header-navbar" class="red">
             <img id="logo-header" style={imgStyle} src={Placeholder} />
