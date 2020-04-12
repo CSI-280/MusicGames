@@ -24,7 +24,6 @@ class Profile extends React.Component {
         render() {
             let content;
             var loggedIn = this.props.location.state.user.signedIn;
-
             if (loggedIn) {
                 content =
                     <div style={divStyle}>
@@ -40,7 +39,9 @@ class Profile extends React.Component {
                     <GoogleLogin
                     clientId="28472414383-unhi5oj95o9l01b0tj379th23g7diu1k.apps.googleusercontent.com"
                     render={renderProps => (
-                        <h2 onClick={renderProps.onClick} disabled={renderProps.disabled} style={{cursor: 'pointer'}}>Login</h2>
+                        <div id="loginBtnDiv">
+                            <button className="loginBtn" onClick={renderProps.onClick} disabled={renderProps.disabled} style={{cursor: 'pointer'}}>Login</button>
+                        </div>
                     )}
                     onSuccess={this.responseGoogle}
                     onFailure={this.responseGoogle}
