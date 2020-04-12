@@ -102,5 +102,11 @@ h2{
 * --------------------------------------------------------------------*/
 
 button{
-    border-radius: 32px;    /* we can play around with this */
+    font-size: 18px;
+    border-radius: 48px;    /* we can play around with this */
+    padding: 2rem;
+    border: none !important;
+}
+.reset{
+    color: #000;
 }

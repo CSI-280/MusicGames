@@ -33,18 +33,10 @@
   text-align: center;
 }
 
-.reset{
-  border: 2px solid white;
-  color: white;
-}
-
 .won{
-  background-color: #ff044b;
+  display: block;
 }
 
 .clear{
-  background-color: white;
-  background-color: black;
-  color: black;
-  border-color: black;
+  display: none;
 }

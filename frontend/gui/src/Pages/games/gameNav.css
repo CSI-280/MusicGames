@@ -7,13 +7,13 @@
 @keyframes button-hover {
   to {
     background-color: var(--orange);
-    border: 6px solid black;
+    border: 6px solid #555;
   }
 }
 
 @keyframes button-hover-text {
   to {
-    color: black;
+    color: #555;
   }
 }
 
@@ -39,12 +39,12 @@ th{
   float: left;
 }
 
-.games-pane div a{
+.games-pane  a{
   color: #fff;
   text-decoration: none;
 }
 
-.games-pane div{
+.games-pane a{
   transition: transform .2s; /* Animation */
   border-radius: 25px;
   padding: 2rem;
@@ -55,13 +55,13 @@ th{
   font-size: 24px;
 }
 
-.games-pane div:hover{
+.games-pane a:hover{
   transform: scale(1.1);
   animation: button-hover .5s;
   animation-fill-mode: forwards;
 }
 
-.games-pane div:hover a{
+.games-pane a:hover{
   animation: button-hover-text .5s;
   animation-fill-mode: forwards;
 }

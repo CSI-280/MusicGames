@@ -176,7 +176,7 @@ class Game extends React.Component {
           </tr>
         </tbody>
       </table>
-      <button class="reset clear" id="resetButton" onClick={this.resetBoard}>Play again!</button>
+      <button class="reset clear green" id="resetButton" onClick={this.resetBoard}>Play again!</button>
       </div>
     );
   }
