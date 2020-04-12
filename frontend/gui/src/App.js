@@ -13,7 +13,6 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <Applist></Applist>
         <Route exact path = "/" component={Home} />
         <Route exact path = "/GameHub" component={GameHub} />
         <Route path="/About" component={About} />
