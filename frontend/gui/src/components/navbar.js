@@ -1,7 +1,12 @@
 import React from 'react';
 import Placeholder from './images/playerPlaceholder.png';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import GoogleLogin from './profile.js';
+=======
+import Player from './player/playler';
+
+>>>>>>> temp
 
 class Navbar extends React.Component {
     
@@ -22,8 +27,8 @@ class Navbar extends React.Component {
        // Its best to make your component a class (this is a class "class name extends React.Component")
         return (
         <header id="page-header-navbar" class="red">
-            <img id="logo-header" style={imgStyle} src={Placeholder} />
-            <h1 class="navbar-title font-weight--1" >Extended Play</h1>
+            <Player />
+            <Link to="/"><h1 class="navbar-title font-weight--1">Extended Play</h1></Link>
             <div class="navbar-nav-links font-weight--2">
                 <p><Link to={{pathname:"/", state: {user}}}>Home</Link></p>
                 <p>|</p>
