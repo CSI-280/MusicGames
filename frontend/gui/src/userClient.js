@@ -5,6 +5,9 @@ const UserClient = {
     goog_id : null,
     loged_in : false,
     username : null,
+    firstName: null,
+    lastName: null,
+    profilePic: null,
     base_url : 'http://localhost:8000/data/', //subject to change
 
     //basic get request
@@ -23,6 +26,7 @@ const UserClient = {
 
     //log in the user 
     async login(g_id){
+        console.log(JSON.parse(JSON.stringify(g_id)))
         this.goog_id = g_id
         var rsp = await this.makePostRequest('login/')
         if (rsp.data == "user added to db"){
@@ -78,9 +82,35 @@ const UserClient = {
         await this.setPoints(new_points)
     },
 
+
+    //set users real life name
+    setName(firstName, lastName){
+        this.firstName = firstName
+        this.lastName = lastName
+    },
+
+
+    setProfilePic(pic){
+        this.profilePic = pic
+    },
+
+
     //-----------------GET USER DATA ------------------//
 
-    //get all user data
+
+    getFullName(){
+        return [this.firstName, this.lastName]
+    },
+
+
+    getProfilePic(){
+        return this.profilePic
+    },
+
+
+
+
+    //get all user data in server
     async getUserData(){
         return await this.makeGetRequest('user/'+this.goog_id)
     },

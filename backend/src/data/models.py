@@ -11,7 +11,7 @@ class secret(models.Model):
 
 
 class user(models.Model):
-    g_id = models.CharField(max_length=100, default='0')
+    g_id = models.CharField(max_length=100, default='0', primary_key='true')
     public_access_key = models.CharField(max_length=35, default='0')
     username = models.CharField(max_length=20, default='null')
     points = models.CharField(max_length=8, default='0')
