@@ -6,6 +6,7 @@ import Navbar from './components/navbar';
 import Home from './components/home';
 import About from './components/about';
 import GameHub from './Pages/games/GameHub';
+import Profile from './components/profile';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route exact path = "/" component={Home} />
         <Route exact path = "/GameHub" component={GameHub} />
         <Route path="/About" component={About} />
+        <Route path="/Profile" component={Profile} />
       </div>
     </Router>
 
