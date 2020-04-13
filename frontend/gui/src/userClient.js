@@ -26,7 +26,6 @@ const UserClient = {
 
     //log in the user 
     async login(g_id){
-        console.log(JSON.parse(JSON.stringify(g_id)))
         this.goog_id = g_id
         var rsp = await this.makePostRequest('login/')
         if (rsp.data == "user added to db"){
@@ -63,13 +62,6 @@ const UserClient = {
     //set user points
     async setPoints(new_data){
         await this.makePostRequest('setUserData/', {'points': new_data})
-    },
-
-
-    //set user spotify info
-    async setSpotify(sec, ref){
-        await this.makePostRequest('setUserData/', {'spotify_sec': sec})
-        await this.makePostRequest('setUserData/', {'spotify_ref': ref})
     },
 
 
@@ -147,18 +139,6 @@ const UserClient = {
     async getID(){
         var incoming = await this.getUserData()
         return incoming.data['id']
-    },
-
-    // get spotify user secret key
-    async getSpotify_sec(){
-        var incoming = await this.getUserData()
-        return incoming.data['spotify_sec']
-    },
-
-    // get spotify refresh key
-    async getSpotify_ref(){
-        var incoming = await this.getUserData()
-        return incoming.data['spotify_ref']
     },
 
 }

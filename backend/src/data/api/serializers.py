@@ -13,6 +13,6 @@ class secretSerialziers(serializers.ModelSerializer):
 class userSerialziers(serializers.ModelSerializer):
     class Meta:
         model = user
-        fields = ('g_id','public_access_key', 'username', 'points', 'spotify_sec', 'spotify_ref')
+        fields = ('g_id','public_access_key', 'username', 'points')
 
 

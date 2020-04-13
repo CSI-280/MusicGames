@@ -15,8 +15,6 @@ class user(models.Model):
     public_access_key = models.CharField(max_length=35, default='0')
     username = models.CharField(max_length=20, default='null')
     points = models.CharField(max_length=8, default='0')
-    spotify_sec = models.CharField(max_length=120, default='')
-    spotify_ref = models.CharField(max_length=120, default='')
 
     def __str__(self):
         return self.username
@@ -27,8 +25,6 @@ class user(models.Model):
         self.public_access_key = public_access_key
         self.username = username
         self.points = points
-        self.spotify_sec = ''
-        self.spotify_ref = ''
 
         return user
     

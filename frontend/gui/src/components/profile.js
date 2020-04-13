@@ -6,7 +6,6 @@ class Profile extends React.Component {
     
 
     responseGoogle = (response) => {
-        console.log(response);
 
         //populating userInfo from navbar :)
         this.props.location.state.user.fullName = response.profileObj.name;

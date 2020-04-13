@@ -44,12 +44,6 @@ class setUserData(View):
             if 'new_g_id' in data:
                 cur_user.g_id = data.get('new_g_id')
 
-            if 'spotify_sec' in data:
-                cur_user.spotify_sec = data.get('spotify_sec')
-
-            if 'spotify_ref' in data:
-                cur_user.spotify_ref = data.get('spotify_sec')
-            
             cur_user.save()
 
             return HttpResponse('updated user')
@@ -67,6 +61,7 @@ class login(View):
     # note this can be faked easily by just sending a custom ID to the post request endpoint
     def post(self, request):
         data = json.loads((request.body).decode('utf-8'))
+
         if 'google_id' in data:
             # if id is found
             
@@ -77,7 +72,7 @@ class login(View):
             else:
                 # need way to get user username
                 # if the user dosnt exist
-                new_user = user(user.objects.all().count()+1, data.get('google_id'), 1 , 'null', 0)
+                new_user = user(data.get('google_id'), 1 , 'null', 0)
                 new_user.save()
                 return HttpResponse('user added to db')
                                 
