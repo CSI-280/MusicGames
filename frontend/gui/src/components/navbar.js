@@ -31,7 +31,7 @@ class Navbar extends React.Component {
                 <p>|</p>
                 <p>Points</p>
                 <p>|</p>
-                <p><Link to={{pathname:"/gamehub", state: {user}}}>Games</Link></p>
+                <p><Link to={{pathname:"/GameHub", state: {user}}}>Games</Link></p>
                 <p>|</p>
                 <p><Link to={{pathname:"/profile", state: {user}}}>Profile</Link></p>
                 <p>|</p>
