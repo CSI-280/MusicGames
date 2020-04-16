@@ -1,12 +1,11 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
-
+import userClient from '../userClient';
 
 class Profile extends React.Component {
     
 
     responseGoogle = (response) => {
-        console.log(response);
 
         //populating userInfo from navbar :)
         this.props.location.state.user.fullName = response.profileObj.name;
@@ -16,6 +15,14 @@ class Profile extends React.Component {
         this.props.location.state.user.id = response.profileObj.googleId;
         this.props.location.state.user.profilePic = response.profileObj.imageUrl;
         this.props.location.state.user.signedIn = true;
+
+
+        //adding data to user client :)
+        userClient.login((response.profileObj.googleId).toString());
+        userClient.setProfilePic(response.profileObj.imageUrl);
+        userClient.setName(response.profileObj.givenName, response.profileObj.familyName);
+        userClient.loged_in = true;
+
 
         //make the page re-render
         this.forceUpdate();

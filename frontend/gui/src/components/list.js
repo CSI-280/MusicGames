@@ -1,6 +1,8 @@
 import React from 'react'
-import axios from 'axios'
+//import axios from 'axios'
 import SpotifyClient from '../SpotifyClient'
+import userClient from '../userClient'
+
 
 class Applist extends React.Component {
     state = {
@@ -10,29 +12,25 @@ class Applist extends React.Component {
     /*MOVE TO LOGIN BUTTON */
     login(){   
         SpotifyClient.Login()
-        console.log('ran')
     }
     /*END LOGIN MOVE */
     
     /*temp for testing*/
     idWant(){
-        console.log(SpotifyClient.getID())
+        //console.log(SpotifyClient.getID())
     }
 
-    
+
     componentDidMount() {
-        axios.get("http://127.0.0.1:8000/api/") //subject to change
-            .then(res => {
-                this.setState({
-                    articles: res.data
-                })
-                console.log(res.data)
-            })
+            userClient.login(1)
+            console.log(userClient.getUserData())  
+            console.log(userClient.setUsername('danny123'))
+            
     }
     
 
     render() {
-        
+            
         return (<>
             <h1> check console </h1>
             <input id="clickMe" type="button" value="login" onClick= {() => this.login()} />

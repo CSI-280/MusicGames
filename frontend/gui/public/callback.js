@@ -60,11 +60,11 @@ auth.onmessage = function(e) {
                 login.postMessage(value);
                 login.close();
                 console.log(value)
-                window.close()
+                //window.close()
             })
             .catch(function(error) {
                 console.log(error);
-                window.close()
+                //window.close()
             })
         }
     }
