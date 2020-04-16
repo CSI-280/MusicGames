@@ -11,6 +11,7 @@ import GuessSong from './Pages/games/GuessSong';
 import GuessArtist from './Pages/games/GuessArtist';
 import Connect4 from './Pages/games/Connect4';
 import Profile from './components/profile';
+import Points from './components/Points';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route exact path = "/GameHub/GuessArtist" component={GuessArtist} />
         <Route path="/GameHub/Connect4" component={Connect4} />
         <Route path="/Profile" component={Profile} />
+        <Route path="/Points" component={Points} />
       </div>
     </Router>
 
