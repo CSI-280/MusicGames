@@ -1,7 +1,5 @@
 import React from 'react';
-import Placeholder from './images/playerPlaceholder.png';
 import { Link } from 'react-router-dom';
-import GoogleLogin from './profile.js';
 import Player from './player/playler';
 
 
@@ -41,12 +39,7 @@ class Navbar extends React.Component {
     )}
 }
 
-const imgStyle = {
-    height: '5vw',
-    width: 'auto',
-    float: 'left',
-    display: 'inline-block',
-}
+
 
 
 export default Navbar

@@ -120,7 +120,7 @@ function Home () {
             That concludes our ceremonies.
             And begins your career
             at Honex Industries!</p>
-            <img src={bee} />
+            <img src={bee} alt="bee"/>
         </div>
     )
 }

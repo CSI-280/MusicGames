@@ -28,7 +28,7 @@ const UserClient = {
     async login(g_id){
         this.goog_id = g_id
         var rsp = await this.makePostRequest('login/')
-        if (rsp.data == "user added to db"){
+        if (rsp.data === "user added to db"){
             this.login(g_id)
         }
         this.loged_in = true
