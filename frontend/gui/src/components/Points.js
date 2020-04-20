@@ -1,6 +1,10 @@
 import React from 'react'
 import './Points.css'
 import $ from "jquery"
+import GoogleLogin from 'react-google-login';
+import userClient from '../userClient';
+import Player from './player/playler';
+
 
 var showModal = false;
 
@@ -15,6 +19,9 @@ function toggleModal(){
 }
 
 class Points extends React.Component {
+
+
+
     render() {
         return (
             <div className="points-wrapper">
@@ -22,10 +29,24 @@ class Points extends React.Component {
                 <table className="points-table">
                     <tbody>
                         <tr>
-                            <td rowSpan="3" className="playlist">songs</td>
+                            <td rowSpan="3" className="playlist">playlist</td>
                             <td rowSpan="2" className="center">
-                                <div className="meta scrollable">details</div>
-                                <div className="cover">cover</div>
+                                <div className="meta scrollable">
+                                    <h3 className="subheader">details</h3>
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur.
+                                    </p>
+                                </div>
+                                <div className="cover">
+                                    <img className="cover-image" src="https://filmschoolrejects.com/wp-content/uploads/2019/08/bee-movie.jpg" />
+                                    <h2 class="subheader">Song name</h2>
+                                    <h3 class="subheader">Artist/album</h3>
+                                </div>
                             </td>
                             <td>tidbits</td>
                         </tr>
@@ -40,7 +61,10 @@ class Points extends React.Component {
                             </td>
                         </tr>
                         <tr>
-                            <td>Your points</td>
+                            <td>Your points
+                                <br />
+                                {this.props.location.state.user.points}
+                            </td>
                             <td>what's this?</td>
                         </tr>
                     </tbody>

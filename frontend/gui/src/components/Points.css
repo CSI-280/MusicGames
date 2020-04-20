@@ -31,14 +31,17 @@ div.scrollable {
 .meta{
     width: 40%;
     height: 100%;
-    background-color: blue;
     float: left;
+}
+
+.meta p{
+    padding: 20px;
+    padding-top: 0px;
 }
 
 .cover{
     width: 60%;
     height: 100%;
-    background-color: pink;
     float: right;
 }
 
@@ -90,4 +93,22 @@ div.scrollable {
 button{
     background-color: var(--green);
     border-color: var(--green);
+}
+
+.subheader{
+    text-align: center;
+}
+
+.cover-image{
+    padding-top: 25%;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: inherit;
+}
+
+.big{
+    width: 100%;
 }
