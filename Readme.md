@@ -30,15 +30,13 @@ Since we are logical developers, living in the 21st century, we will be using we
 
 ## APIs
 With this project, we will be using a number of APIs:
-   * [Last.fm](https://www.last.fm/api/)
-       * Last.fm is a tool that tracks your music, and can provide recommendations based on artists that you listen to. It has a ton a data that will be useful for this project.
    * [Spotify](https://developer.spotify.com/documentation/web-api/)
         * It's Spotify. This is what we're going to manage music.
         * For the site, we will have one master account that will be used to playback songs. The account will also hold the playlist for the site.
    * [SoundCloud](https://developers.soundcloud.com/)
-         * It's Soundcloud. This is how we are going to be playing music on the site for people to hear.
+        * It's Soundcloud. This is how we are going to be playing music on the site for people to hear.
    * [Google Sign-in](https://developers.soundcloud.com/)
-         * Managing accounts properly is scarry, that why we are letting the bigs boy handel it. 
+        * Managing accounts properly is scarry, that why we are letting the bigs boy handel it. 
 We will be using more APIs as this project grows, but there are a few that we know we are going to use.
 
 - - - -
