@@ -11,7 +11,7 @@ class Applist extends React.Component {
         
     /*MOVE TO LOGIN BUTTON */
     login(){   
-        SpotifyClient.Login()
+        console.log(SpotifyClient.getUserData())
     }
     /*END LOGIN MOVE */
     

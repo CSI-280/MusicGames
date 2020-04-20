@@ -4,44 +4,12 @@ import axios from 'axios'
 
 const SpotifyClient = {  
     client_id : '42b56bb8489a418db8bd7d2c631b2eef',
-    user_token : null,
-    loged_in : false,
+    user_token : 'BQDUr9gnn32ItYl0HMh1BknIFeZzAHgAKb21gJbhXsTL4aak2BP9QHvWKUMk5_H3e8gvh2V1DPxIQDNbQ9mme_u16VmAI0w5i_dySkQJzsNpowW1xmRm1_7zvh7bO_uIrjg4znMLRIu2FelIXPmHc3dxbTIsoFJlx9zX_onddJd2mbYx56BrdcbHVvSXwEHCbc7Yx4Y6vedHmocY0g',
+    loged_in : true,
     base_url : 'https://api.spotify.com',
 
     // api doc : https://developer.spotify.com/documentation/web-api/reference/
 
-
-    Login() {
-        window.open('https://accounts.spotify.com/authorize?' +
-            'client_id=' + this.client_id +
-            '&response_type=code' + 
-            '&redirect_uri=http://localhost:3000/callback.html' +
-            '&scope=' + encodeURIComponent('playlist-read-private user-follow-read user-library-read user-top-read user-read-private user-read-email ugc-image-upload')       
-            )
-
-        //used to receieve data from callback
-        const login = new BroadcastChannel('login');
-
-        //used to send data to callback
-        const auth = new BroadcastChannel('auth')
-
-
-
-        //when message is recevied from other page
-        login.onmessage = function(e) {
-            if (e.data === 'ready') {
-                auth.postMessage('42b56bb8489a418db8bd7d2c631b2eef');
-
-                auth.close();
-            }
-            else{
-                SpotifyClient.user_token = e.data;
-                login.close();
-                this.loged_in = true;
-                console.log(SpotifyClient.user_token)         
-            }
-        };
-    },
 
     
     makeRequest(url_add){
@@ -80,7 +48,7 @@ const SpotifyClient = {
 
 
     // get userdata
-    async getID() {
+    async getUserData() {
         return await this.makeRequest('/v1/me');
     },   
 
