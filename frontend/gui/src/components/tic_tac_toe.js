@@ -33,6 +33,7 @@ function findBox(row, cell){
 //when the game is won or tied, stop AI, highlight winning tiles, and turn
 //reset button red
 function winSequence(winner, toMark){
+  $("#board").css("pointer-events", "none");
   $("#resetButton").addClass("won");
   $("#resetButton").removeClass("clear");
   console.log("here");
@@ -132,9 +133,12 @@ $(document).click(function(event) {
     if (element.prop("tagName") === "TD"){
       if (element.parent().parent().attr("id") === "board"){
         var played = markBox(element);
-        console.log(played);
         if (played) {
-          setTimeout(aiPlay, 500);
+          $("#board").click(false);
+          setTimeout(function(){
+            aiPlay();
+            $("#board").off("click");
+          }, 500);
         }
       }
     }
