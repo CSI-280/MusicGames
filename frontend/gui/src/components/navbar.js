@@ -6,7 +6,7 @@ import Player from './player/playler';
 
 
 class Navbar extends React.Component {
-    
+
     userInfo = {
         fullName: "",
         firstName: "",
@@ -17,8 +17,8 @@ class Navbar extends React.Component {
         signedIn: false,
         points: 0}
 
-    
-    render() {        
+
+    render() {
        let user = this.userInfo;
        // You can use this.props.location.state.user.VARIABLE to access the users data on any page.
        // Its best to make your component a class (this is a class "class name extends React.Component")
@@ -29,13 +29,14 @@ class Navbar extends React.Component {
             <div class="navbar-nav-links font-weight--2">
                 <p><Link to={{pathname:"/", state: {user}}}>Home</Link></p>
                 <p>|</p>
-                <p>Points</p>
+                <p><Link to={{pathname:"/Points", state: {user}}}>Points</Link></p>
                 <p>|</p>
                 <p><Link to={{pathname:"/GameHub", state: {user}}}>Games</Link></p>
                 <p>|</p>
                 <p><Link to={{pathname:"/profile", state: {user}}}>Profile</Link></p>
                 <p>|</p>
                 <p><Link to={{pathname:"/about", state: {user}}}>About</Link></p>
+
             </div>
         </header>
     )}
