@@ -38,7 +38,13 @@ class Profile extends React.Component {
                         <p style={textStyle}>Name: {this.props.location.state.user.firstName}</p>
                         <p style={textStyle}>Email: {this.props.location.state.user.email}</p>
                         <p style={textStyle}>Points: {this.props.location.state.user.points}</p>
-                        
+						
+                        //DEV CONTENT PLEASE REMOVE AT LAUNCH
+						<div id="TESTINGBUTTON">
+							<button onclick={"TESTFUNCTIONPLUS()"}>TEST BUTTON ADD 1 POINT</button>
+							<button onclick={"TESTFUNCTIONMINUS()"}>TEST BUTTON SUBTRACT 1 POINT</button>
+							<button onclick={"TESTFUNCTIONZERO()"}>TEST BUTTON RESET POINTS TO 0</button>
+						</div>
                     </div>
             }
             else {
@@ -77,4 +83,20 @@ const imgStyle = {
 const textStyle = {
     fontSize: '1.3vw'
 }
+
+function TESTFUNCTIONPLUS() {
+	this.props.location.state.user.points += 1;
+	this.forceUpdate();
+}
+
+function TESTFUNCTIONMINUS() {
+	this.props.location.state.user.points += 1;
+	this.forceUpdate();
+}
+
+function TESTFUNCTIONZERO() {
+	this.props.location.state.user.points = 0;
+	this.forceUpdate();
+}
+
 export default Profile;
