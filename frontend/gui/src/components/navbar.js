@@ -13,11 +13,18 @@ class Navbar extends React.Component {
         id: "",
         profilePic: "",
         signedIn: false,
+<<<<<<< HEAD
         points: 0
     }
     
     
     render() {        
+=======
+        points: 0}
+
+
+    render() {
+>>>>>>> master
        let user = this.userInfo;
        
        // You can use this.props.location.state.user.VARIABLE to access the users data on any page.
@@ -29,13 +36,14 @@ class Navbar extends React.Component {
             <div class="navbar-nav-links font-weight--2">
                 <p><Link to={{pathname:"/", state: {user}}}>Home</Link></p>
                 <p>|</p>
-                <p>Points</p>
+                <p><Link to={{pathname:"/Points", state: {user}}}>Points</Link></p>
                 <p>|</p>
-                <p><Link to={{pathname:"/gamehub", state: {user}}}>Games</Link></p>
+                <p><Link to={{pathname:"/GameHub", state: {user}}}>Games</Link></p>
                 <p>|</p>
                 <p><Link to={{pathname:"/profile", state: {user}}}>Profile</Link></p>
                 <p>|</p>
                 <p><Link to={{pathname:"/about", state: {user}}}>About</Link></p>
+
             </div>
         </header>
     )}
