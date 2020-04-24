@@ -1,7 +1,7 @@
 import React from 'react'
 //import axios from 'axios'
 import SpotifyClient from '../SpotifyClient'
-import userClient from '../userClient'
+//import userClient from '../userClient'
 
 
 class Applist extends React.Component {
@@ -11,7 +11,7 @@ class Applist extends React.Component {
         
     /*MOVE TO LOGIN BUTTON */
     login(){   
-        SpotifyClient.Login()
+        console.log(SpotifyClient.getUserData())
     }
     /*END LOGIN MOVE */
     
@@ -22,9 +22,9 @@ class Applist extends React.Component {
 
 
     componentDidMount() {
-            userClient.login(1)
-            console.log(userClient.getUserData())  
-            console.log(userClient.setUsername('danny123'))
+            //userClient.login(1)
+            //console.log(userClient.getUserData())  
+            //console.log(userClient.setUsername('danny123'))
             
     }
     

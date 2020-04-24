@@ -1,55 +1,67 @@
 import axios from 'axios'
 
 
-
 const SpotifyClient = {  
     client_id : '42b56bb8489a418db8bd7d2c631b2eef',
     user_token : null,
-    loged_in : false,
+    loged_in : true,
+    refresh_token : "AQCKr3lnfNPGaGRv8sjoq5Yg2nC153VPaKGhG3ha4PQtWgWSJfHFiX13TSU57eu5XYa3RslbCbfckHN4c184_9FFh391FXEHZgVmXEU9pKOm2EkFy5DdLEvVL84vuvn6Gaw", 
     base_url : 'https://api.spotify.com',
+    
 
     // api doc : https://developer.spotify.com/documentation/web-api/reference/
 
+    
+    GetAccessToken() {
+        var _this = this;
 
-    Login() {
-        window.open('https://accounts.spotify.com/authorize?' +
-            'client_id=' + this.client_id +
-            '&response_type=code' + 
-            '&redirect_uri=http://localhost:3000/callback.html' +
-            '&scope=' + encodeURIComponent('playlist-read-private user-follow-read user-library-read user-top-read user-read-private user-read-email ugc-image-upload')       
-            )
+        var secret = new XMLHttpRequest();
+        secret.open('GET', './client_secret.config');
+        secret.send();
+        secret.onload = async function (){
 
-        //used to receieve data from callback
-        const login = new BroadcastChannel('login');
+            if (secret.responseText){
+                
+                axios.post(  
+                    'https://accounts.spotify.com/api/token',  
+                        new URLSearchParams({ 
+                            grant_type: "refresh_token",
+                            refresh_token :  _this.refresh_token, 
+                        }).toString(),
+                        {
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                                'Authorization': 'Basic ' + btoa(_this.client_id + ':' + secret.responseText)
+                            },
+                        }
+                ).then(function(response) {
+                    let value = Object.values(response)[0]['access_token']
+                    _this.user_token = value;
 
-        //used to send data to callback
-        const auth = new BroadcastChannel('auth')
+                }).catch(function(error) {
+                    console.log(error);
 
-
-
-        //when message is recevied from other page
-        login.onmessage = function(e) {
-            if (e.data === 'ready') {
-                auth.postMessage('42b56bb8489a418db8bd7d2c631b2eef');
-
-                auth.close();
+                })
+                
+                
             }
-            else{
-                SpotifyClient.user_token = e.data;
-                login.close();
-                this.loged_in = true;
-                console.log(SpotifyClient.user_token)         
-            }
-        };
+        }
     },
-
     
     makeRequest(url_add){
-        return axios.get(this.base_url + url_add, {
+        var _this = this;
+
+        var resp =  axios.get(this.base_url + url_add, {
             headers : {
                 Authorization : 'Bearer ' + this.user_token,
                 }
         },)
+        .catch(function(error) {
+            if (error.response.status === "401"){
+                _this.GetAccessToken();
+            }
+        })
+        return resp
     },
 
 
@@ -80,7 +92,7 @@ const SpotifyClient = {
 
 
     // get userdata
-    async getID() {
+    async getUserData() {
         return await this.makeRequest('/v1/me');
     },   
 

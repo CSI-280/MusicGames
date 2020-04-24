@@ -3,12 +3,12 @@ import './tic_tac_toe.css'
 import $ from "jquery"
 
 //variables that need to be referenced from many places
-var playerMark = "X";
+
 var playerMark = "♪";
 var turnsPlayed = 0;
 var board = [[0,0,0],[0,0,0],[0,0,0]];
 var gameWon = false;
-var difficulty=0;
+
 
 //returns a jquery of either a single td or a group of tds, corresponding to
 //a box in the grid used for game
@@ -110,11 +110,11 @@ function markBox(box){
 
   console.log(board[row][cell]);
 
-  if (board[row][cell] != "♫" && board[row][cell] != "♪")
+  if (board[row][cell] !== "♫" && board[row][cell] !== "♪")
   {
     board[row][cell] = playerMark;
     $(box).html(playerMark);
-    if (playerMark == "♪"){
+    if (playerMark === "♪"){
       playerMark = "♫";
     } else {
       playerMark = "♪";

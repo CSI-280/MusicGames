@@ -30,17 +30,13 @@ Since we are logical developers, living in the 21st century, we will be using we
 
 ## APIs
 With this project, we will be using a number of APIs:
-   * [Last.fm](https://www.last.fm/api/)
-       * Last.fm is a tool that tracks your music, and can provide recommendations based on artists that you listen to. It has a ton a data that will be useful for this project.
-   * [Bandsintown](https://app.swaggerhub.com/apis/Bandsintown/PublicAPI/3.0.0#/)
-        * Bandsintown is a tool that provides an artists events.
-        * artist info: returns the link to the Bandsintown artist page, the link to the artist photo, the current number of trackers and more
-        * artist events: returns the list of events including their date and time, venue name and location, ticket links, lineup, description and the link to the Bandsintown event page
    * [Spotify](https://developer.spotify.com/documentation/web-api/)
-        * It's Spotify. This is what we're going to use to playback music.
+        * It's Spotify. This is what we're going to manage music.
         * For the site, we will have one master account that will be used to playback songs. The account will also hold the playlist for the site.
-   * [Dictionary](https://dictionaryapi.com/)
-        * This API will be used for one of the sites extra features, breaking down songs word by word, using the dictionary definition.
+   * [SoundCloud](https://developers.soundcloud.com/)
+        * It's Soundcloud. This is how we are going to be playing music on the site for people to hear.
+   * [Google Sign-in](https://developers.soundcloud.com/)
+        * Managing accounts properly is scarry, that why we are letting the bigs boy handel it. 
 We will be using more APIs as this project grows, but there are a few that we know we are going to use.
 
 - - - -
@@ -57,19 +53,14 @@ Then to get to the folder, simply do `cd Musicgames`
 As previously mentioned, this project uses Django and React. So we need to install those dependencies in order to run this on your local machine.
 Run these commands to install them.
 
-`pip install django djangorestframework virtualenv pep8 autopep8 pylint django-cors-headers`
-
-`npm install axios`
+`pip install django djangorestframework virtualenv django-cors-headers`
 
 `cd .\frontend\gui`
 
 `npm install`
 
-`npm istall react-router-dom`
+`npm istall react-router-dom jquery react-google-login axios`
 
-`npm install jquery`
-
-`npm install react-google-login`
 
 #### You might need to update package.json
 You can find this file in frontend/gui/package.json

@@ -3,7 +3,8 @@ import logo from './images/EPlogo.png';
 import people from './images/peopleHavingFun.jpg';
 import esportGamer from './images/esportGamer.jpg';
 
-function Home () {
+function Home () { 
+    
     return (
         <React.Fragment>
             <div style={leftDivStyle}>

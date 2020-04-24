@@ -1,7 +1,5 @@
 import React from 'react';
-import Placeholder from './images/playerPlaceholder.png';
 import { Link } from 'react-router-dom';
-import GoogleLogin from './profile.js';
 import Player from './player/playler';
 
 
@@ -15,11 +13,20 @@ class Navbar extends React.Component {
         id: "",
         profilePic: "",
         signedIn: false,
+<<<<<<< HEAD
+        points: 0
+    }
+    
+    
+    render() {        
+=======
         points: 0}
 
 
     render() {
+>>>>>>> master
        let user = this.userInfo;
+       
        // You can use this.props.location.state.user.VARIABLE to access the users data on any page.
        // Its best to make your component a class (this is a class "class name extends React.Component")
         return (
@@ -42,12 +49,7 @@ class Navbar extends React.Component {
     )}
 }
 
-const imgStyle = {
-    height: '5vw',
-    width: 'auto',
-    float: 'left',
-    display: 'inline-block',
-}
+
 
 
 export default Navbar

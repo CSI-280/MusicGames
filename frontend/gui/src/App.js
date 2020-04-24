@@ -11,13 +11,15 @@ import GuessSong from './Pages/games/GuessSong';
 import GuessArtist from './Pages/games/GuessArtist';
 import Connect4 from './Pages/games/Connect4';
 import Profile from './components/profile';
+import SpotifyClient from './SpotifyClient';
 import Points from './components/Points';
 
 function App() {
+  SpotifyClient.GetAccessToken(); 
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar /> 
         <Route exact path = "/" component={Home} />
         <Route path = "/GameHub" component={GameHub} />
         <Route path="/About" component={About} />

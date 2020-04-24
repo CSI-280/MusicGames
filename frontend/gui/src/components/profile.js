@@ -4,7 +4,6 @@ import userClient from '../userClient';
 
 class Profile extends React.Component {
     
-
     responseGoogle = (response) => {
 
         //populating userInfo from navbar :)
@@ -34,7 +33,7 @@ class Profile extends React.Component {
             if (loggedIn) {
                 content =
                     <div style={divStyle}>
-                        <img style={imgStyle} src={this.props.location.state.user.profilePic}></img>
+                        <img style={imgStyle} src={this.props.location.state.user.profilePic} alt=""></img >
                         <p style={textStyle}>Name: {this.props.location.state.user.firstName}</p>
                         <p style={textStyle}>Email: {this.props.location.state.user.email}</p>
                         <p style={textStyle}>Points: {this.props.location.state.user.points}</p>
