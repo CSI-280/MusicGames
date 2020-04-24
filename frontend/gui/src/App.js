@@ -6,12 +6,15 @@ import Home from './components/home';
 import About from './components/about';
 import GameHub from './Pages/games/GameHub';
 import Profile from './components/profile';
+import List from './components/list';
+import SpotifyClient from './SpotifyClient';
 
-
-function App() {
+function App() { 
+  SpotifyClient.GetAccessToken(); 
   return (
     <Router>
       <div className="App">
+        <List/>
         <Navbar /> 
         <Route exact path = "/" component={Home} />
         <Route exact path = "/GameHub" component={GameHub} />

@@ -1,23 +1,67 @@
 import axios from 'axios'
 
 
-
 const SpotifyClient = {  
     client_id : '42b56bb8489a418db8bd7d2c631b2eef',
-    user_token : 'BQDUr9gnn32ItYl0HMh1BknIFeZzAHgAKb21gJbhXsTL4aak2BP9QHvWKUMk5_H3e8gvh2V1DPxIQDNbQ9mme_u16VmAI0w5i_dySkQJzsNpowW1xmRm1_7zvh7bO_uIrjg4znMLRIu2FelIXPmHc3dxbTIsoFJlx9zX_onddJd2mbYx56BrdcbHVvSXwEHCbc7Yx4Y6vedHmocY0g',
+    user_token : null,
     loged_in : true,
+    refresh_token : "AQCKr3lnfNPGaGRv8sjoq5Yg2nC153VPaKGhG3ha4PQtWgWSJfHFiX13TSU57eu5XYa3RslbCbfckHN4c184_9FFh391FXEHZgVmXEU9pKOm2EkFy5DdLEvVL84vuvn6Gaw", 
     base_url : 'https://api.spotify.com',
+    
 
     // api doc : https://developer.spotify.com/documentation/web-api/reference/
 
+    
+    GetAccessToken() {
+        var _this = this;
 
+        var secret = new XMLHttpRequest();
+        secret.open('GET', './client_secret.config');
+        secret.send();
+        secret.onload = async function (){
+
+            if (secret.responseText){
+                
+                axios.post(  
+                    'https://accounts.spotify.com/api/token',  
+                        new URLSearchParams({ 
+                            grant_type: "refresh_token",
+                            refresh_token :  _this.refresh_token, 
+                        }).toString(),
+                        {
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                                'Authorization': 'Basic ' + btoa(_this.client_id + ':' + secret.responseText)
+                            },
+                        }
+                ).then(function(response) {
+                    let value = Object.values(response)[0]['access_token']
+                    _this.user_token = value;
+
+                }).catch(function(error) {
+                    console.log(error);
+
+                })
+                
+                
+            }
+        }
+    },
     
     makeRequest(url_add){
-        return axios.get(this.base_url + url_add, {
+        var _this = this;
+
+        var resp =  axios.get(this.base_url + url_add, {
             headers : {
                 Authorization : 'Bearer ' + this.user_token,
                 }
         },)
+        .catch(function(error) {
+            if (error.response.status === "401"){
+                _this.GetAccessToken();
+            }
+        })
+        return resp
     },
 
 

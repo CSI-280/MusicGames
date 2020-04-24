@@ -4,7 +4,6 @@ import userClient from '../userClient';
 
 class Profile extends React.Component {
     
-
     responseGoogle = (response) => {
 
         //populating userInfo from navbar :)

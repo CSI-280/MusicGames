@@ -4,7 +4,7 @@ import Player from './player/playler';
 
 
 class Navbar extends React.Component {
-    
+
     userInfo = {
         fullName: "",
         firstName: "",
@@ -13,11 +13,13 @@ class Navbar extends React.Component {
         id: "",
         profilePic: "",
         signedIn: false,
-        points: 0}
-
+        points: 0
+    }
+    
     
     render() {        
        let user = this.userInfo;
+       
        // You can use this.props.location.state.user.VARIABLE to access the users data on any page.
        // Its best to make your component a class (this is a class "class name extends React.Component")
         return (

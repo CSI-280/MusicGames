@@ -2,7 +2,8 @@ import React from 'react';
 import bee from './images/Bee.png';
 
 
-function Home () {
+function Home () { 
+    
     return (
         <div>
             <p>According to all known laws
