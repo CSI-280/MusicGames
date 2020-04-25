@@ -1,0 +1,25 @@
+:root {
+  --orange: #ff5c04;
+  --pink: #ff044b;
+  --green: #04ff71;
+}
+
+.cover{
+    height: 3rem;
+    width: 3rem;
+    padding: 20px;
+    text-align: left;
+    left: 0;
+}
+
+.start{
+    display: none;
+}
+
+.correct{
+    color: green;
+}
+
+.incorrect{
+    color: red;
+}
