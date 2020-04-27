@@ -2,7 +2,9 @@
 
 function GuessA() {
     return (
-      <h2>Guess the Artist</h2>
+      <div class="game-board">
+        <h2 class="orange">Guess the Artist</h2>
+      </div>
     )
 }
 export default GuessA

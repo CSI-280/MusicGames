@@ -16,7 +16,7 @@ body{
 }
 
 .points-table td{
-    border: 1px solid var(--pink);
+    border: 1px solid var(--orange);
     padding: 10px;
     vertical-align: top;
 }

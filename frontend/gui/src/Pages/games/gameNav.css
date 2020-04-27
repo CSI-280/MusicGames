@@ -7,13 +7,13 @@
 @keyframes button-hover {
   to {
     background-color: var(--orange);
-    border: 6px solid black;
+    border: 6px solid #555;
   }
 }
 
 @keyframes button-hover-text {
   to {
-    color: black;
+    color: #555;
   }
 }
 
@@ -26,58 +26,42 @@ th{
   font: aileron;
 }
 
+.game-body{
+  display: grid;
+  grid-template-columns: 25vw auto;
+}
+
 .games-pane{
-  border-collapse: none;
-  border-spacing: 1rem;
+  display: flex;
+  flex-direction: column;
   margin: auto;
   text-align: center;
   float: left;
-  border-color: white;
-  max-width: 20rem;
-  margin-top: 1rem;
-  position: static;
+}
+
+.games-pane  a{
+  color: #fff;
+  text-decoration: none;
 }
 
 .games-pane a{
-  color: white;
-  text-decoration: none;
-  font-size: x-large;
-}
-
-.games-pane a:hover{
-  text-decoration: none;
-}
-
-.games-pane td{
   transition: transform .2s; /* Animation */
   border-radius: 25px;
   padding: 2rem;
   border: 6px solid var(--orange);
 }
 
-.games-pane td:hover{
+.select-game {
+  font-size: 24px;
+}
+
+.games-pane a:hover{
   transform: scale(1.1);
   animation: button-hover .5s;
   animation-fill-mode: forwards;
 }
 
-.games-pane td:hover a{
+.games-pane a:hover{
   animation: button-hover-text .5s;
   animation-fill-mode: forwards;
-}
-
-.games-pane table{
-  background-color: white;
-  border: 1px solid white;
-}
-
-td {
-    overflow: hidden;
-    padding: 2rem;
-}
-
-td a {
-  display: block;
-  margin: -10em;
-  padding: 10em;
 }
