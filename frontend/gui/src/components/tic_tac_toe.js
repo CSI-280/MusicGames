@@ -1,6 +1,7 @@
 import React from 'react'
 import './tic_tac_toe.css'
 import $ from "jquery"
+import userClient from '../userClient'
 
 //variables that need to be referenced from many places
 
@@ -39,10 +40,15 @@ function winSequence(winner, toMark){
   if (winner === "tie"){
     console.log("Tie!");
   } else{
+
     console.log(winner + " won!");
     for (var i = 0; i < 9; i += 2){
       $(findBox(toMark[i], toMark[i + 1])).css("color", "green");
     }
+
+    //Since this game is easy, only 2 points will be awarded
+    userClient.setPointsOffset(2)
+
   }
   turnsPlayed = 0;
   board = [[0,0,0],[0,0,0],[0,0,0]];

@@ -26,6 +26,25 @@ class Profile extends React.Component {
         //make the page re-render
         this.forceUpdate();
     }
+
+//The purpose of the following functions is to adjust the User's points on the fly,
+//Allowing developer team to test out the points system.
+
+     TESTFUNCTIONPLUS() {
+        userClient.setPointsOffset(1);
+        console.log(userClient.getPoints())
+        this.forceUpdate();
+    }
+
+     TESTFUNCTIONMINUS() {
+        userClient.setPointsOffset(-1);
+        this.forceUpdate();
+    }
+
+     TESTFUNCTIONZERO() {
+        userClient.setPoints(0);
+        this.forceUpdate();
+    }
         
         render() {
             let content;
@@ -39,11 +58,11 @@ class Profile extends React.Component {
                         <p style={textStyle}>Points: {this.props.location.state.user.points}</p>
 						
                         //DEV CONTENT PLEASE REMOVE AT LAUNCH
-						<div id="TESTINGBUTTON">
-							<button onclick={"TESTFUNCTIONPLUS()"}>TEST BUTTON ADD 1 POINT</button>
-							<button onclick={"TESTFUNCTIONMINUS()"}>TEST BUTTON SUBTRACT 1 POINT</button>
-							<button onclick={"TESTFUNCTIONZERO()"}>TEST BUTTON RESET POINTS TO 0</button>
-						</div>
+						//<div id="TESTINGBUTTON">
+						//	<button onclick={"TESTFUNCTIONPLUS()"}>TEST BUTTON ADD 1 POINT</button>
+						//	<button onclick={"TESTFUNCTIONMINUS()"}>TEST BUTTON SUBTRACT 1 POINT</button>
+						//	<button onclick={"TESTFUNCTIONZERO()"}>TEST BUTTON RESET POINTS TO 0</button>
+						//</div>
                     </div>
             }
             else {
@@ -83,19 +102,5 @@ const textStyle = {
     fontSize: '1.3vw'
 }
 
-function TESTFUNCTIONPLUS() {
-	this.props.location.state.user.points += 1;
-	this.forceUpdate();
-}
-
-function TESTFUNCTIONMINUS() {
-	this.props.location.state.user.points += 1;
-	this.forceUpdate();
-}
-
-function TESTFUNCTIONZERO() {
-	this.props.location.state.user.points = 0;
-	this.forceUpdate();
-}
 
 export default Profile;

@@ -18,6 +18,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SpotifyClient from '../../SpotifyClient.js';
 import './GuessArtist.css'
+import userClient from '../../userClient'
 
 
 var trackID = "3n3Ppam7vgaVa1iaRUc9Lp";
@@ -72,6 +73,10 @@ function showAnswer(correct){
             result.innerHTML = "Correct<br />";
             result.classList.remove("incorrect");
             result.classList.add("correct");
+
+            //Adds 10 points to the user
+            userClient.setPointsOffset(10)
+        
         } else {
             result.innerHTML = "Incorrect<br />";
             result.classList.remove("correct");
