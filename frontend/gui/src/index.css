@@ -139,3 +139,7 @@ button{
     text-align: center;
     margin: 3vw;
 }
+
+.guessArtist td{
+    padding: 2rem;
+}
