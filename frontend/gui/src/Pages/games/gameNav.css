@@ -6,7 +6,7 @@
 
 @keyframes button-hover {
   to {
-    background-color: var(--orange);
+    background-color: var(--green);
     border: 6px solid black;
   }
 }
