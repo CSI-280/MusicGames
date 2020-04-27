@@ -160,6 +160,7 @@ class Game extends React.Component {
 
     $("#resetButton").addClass("clear");
     $("#resetButton").removeClass("won");
+    $("#board").css("pointer-events", "auto");
     gameWon = false;
   }
 
