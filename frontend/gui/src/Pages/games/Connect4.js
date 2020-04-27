@@ -3,77 +3,75 @@ import './Connect4.css'
 
 function con4() {
     return (
-    <H1>CONNECT FOUR</H1>
-    <div id="colorTurn">Yellow's Turn</div>
+    <div>
+        <h1>CONNECT FOUR</h1>
+        <div id="colorTurn">Yellow's Turn</div>
+            <div id="grid">
+                <div class="row">
+                    <div class="cell" id="cell00" onclick="selectColumn(0)"></div>
+                    <div class="cell" id="cell01" onclick="selectColumn(1)"></div>
+                    <div class="cell" id="cell02" onclick="selectColumn(2)"></div>
+                    <div class="cell" id="cell03" onclick="selectColumn(3)"></div>
+                    <div class="cell" id="cell04" onclick="selectColumn(4)"></div>
+                    <div class="cell" id="cell05" onclick="selectColumn(5)"></div>
+                    <div class="cell" id="cell06" onclick="selectColumn(6)"></div>
+                </div>
+                <div class="row">
+                    <div class="cell" id="cell10" onclick="selectColumn(0)"></div>
+                    <div class="cell" id="cell11" onclick="selectColumn(1)"></div>
+                    <div class="cell" id="cell12" onclick="selectColumn(2)"></div>
+                    <div class="cell" id="cell13" onclick="selectColumn(3)"></div>
+                    <div class="cell" id="cell14" onclick="selectColumn(4)"></div>
+                    <div class="cell" id="cell15" onclick="selectColumn(5)"></div>
+                    <div class="cell" id="cell16" onclick="selectColumn(6)"></div>
+                </div>
+                <div class="row">
+                    <div class="cell" id="cell20" onclick="selectColumn(0)"></div>
+                    <div class="cell" id="cell21" onclick="selectColumn(1)"></div>
+                    <div class="cell" id="cell22" onclick="selectColumn(2)"></div>
+                    <div class="cell" id="cell23" onclick="selectColumn(3)"></div>
+                    <div class="cell" id="cell24" onclick="selectColumn(4)"></div>
+                    <div class="cell" id="cell25" onclick="selectColumn(5)"></div>
+                    <div class="cell" id="cell26" onclick="selectColumn(6)"></div>
+                </div>
+                <div class="row">
+                    <div class="cell" id="cell30" onclick="selectColumn(0)"></div>
+                    <div class="cell" id="cell31" onclick="selectColumn(1)"></div>
+                    <div class="cell" id="cell32" onclick="selectColumn(2)"></div>
+                    <div class="cell" id="cell33" onclick="selectColumn(3)"></div>
+                    <div class="cell" id="cell34" onclick="selectColumn(4)"></div>
+                    <div class="cell" id="cell35" onclick="selectColumn(5)"></div>
+                    <div class="cell" id="cell36" onclick="selectColumn(6)"></div>
+                </div>
+                <div class="row">
+                    <div class="cell" id="cell40" onclick="selectColumn(0)"></div>
+                    <div class="cell" id="cell41" onclick="selectColumn(1)"></div>
+                    <div class="cell" id="cell42" onclick="selectColumn(2)"></div>
+                    <div class="cell" id="cell43" onclick="selectColumn(3)"></div>
+                    <div class="cell" id="cell44" onclick="selectColumn(4)"></div>
+                    <div class="cell" id="cell45" onclick="selectColumn(5)"></div>
+                    <div class="cell" id="cell46" onclick="selectColumn(6)"></div>
+                </div>
+                    <div class="row">
+                    <div class="cell" id="cell50" onclick="selectColumn(0)"></div>
+                    <div class="cell" id="cell51" onclick="selectColumn(1)"></div>
+                    <div class="cell" id="cell52" onclick="selectColumn(2)"></div>
+                    <div class="cell" id="cell53" onclick="selectColumn(3)"></div>
+                    <div class="cell" id="cell54" onclick="selectColumn(4)"></div>
+                    <div class="cell" id="cell55" onclick="selectColumn(5)"></div>
+                    <div class="cell" id="cell56" onclick="selectColumn(6)"></div>
+                </div>
+            </div>
 
-  <div id="grid">
-    <div class="row">
-      <div class="cell" id="cell00" onclick="selectColumn(0)"></div>
-      <div class="cell" id="cell01" onclick="selectColumn(1)"></div>
-      <div class="cell" id="cell02" onclick="selectColumn(2)"></div>
-      <div class="cell" id="cell03" onclick="selectColumn(3)"></div>
-      <div class="cell" id="cell04" onclick="selectColumn(4)"></div>
-      <div class="cell" id="cell05" onclick="selectColumn(5)"></div>
-      <div class="cell" id="cell06" onclick="selectColumn(6)"></div>
-    </div>
-    <div class="row">  
-      <div class="cell" id="cell10" onclick="selectColumn(0)"></div>
-      <div class="cell" id="cell11" onclick="selectColumn(1)"></div>
-      <div class="cell" id="cell12" onclick="selectColumn(2)"></div>
-      <div class="cell" id="cell13" onclick="selectColumn(3)"></div>
-      <div class="cell" id="cell14" onclick="selectColumn(4)"></div>
-      <div class="cell" id="cell15" onclick="selectColumn(5)"></div>
-      <div class="cell" id="cell16" onclick="selectColumn(6)"></div>
-    </div>
-    <div class="row">  
-      <div class="cell" id="cell20" onclick="selectColumn(0)"></div>
-      <div class="cell" id="cell21" onclick="selectColumn(1)"></div>
-      <div class="cell" id="cell22" onclick="selectColumn(2)"></div>
-      <div class="cell" id="cell23" onclick="selectColumn(3)"></div>
-      <div class="cell" id="cell24" onclick="selectColumn(4)"></div>
-      <div class="cell" id="cell25" onclick="selectColumn(5)"></div>
-      <div class="cell" id="cell26" onclick="selectColumn(6)"></div>
-    </div>
-    <div class="row">  
-      <div class="cell" id="cell30" onclick="selectColumn(0)"></div>
-      <div class="cell" id="cell31" onclick="selectColumn(1)"></div>
-      <div class="cell" id="cell32" onclick="selectColumn(2)"></div>
-      <div class="cell" id="cell33" onclick="selectColumn(3)"></div>
-      <div class="cell" id="cell34" onclick="selectColumn(4)"></div>
-      <div class="cell" id="cell35" onclick="selectColumn(5)"></div>
-      <div class="cell" id="cell36" onclick="selectColumn(6)"></div>
-    </div>
-    <div class="row">
-      <div class="cell" id="cell40" onclick="selectColumn(0)"></div>
-      <div class="cell" id="cell41" onclick="selectColumn(1)"></div>
-      <div class="cell" id="cell42" onclick="selectColumn(2)"></div>
-      <div class="cell" id="cell43" onclick="selectColumn(3)"></div>
-      <div class="cell" id="cell44" onclick="selectColumn(4)"></div>
-      <div class="cell" id="cell45" onclick="selectColumn(5)"></div>
-      <div class="cell" id="cell46" onclick="selectColumn(6)"></div>
-    </div>
-    <div class="row">
-      <div class="cell" id="cell50" onclick="selectColumn(0)"></div>
-      <div class="cell" id="cell51" onclick="selectColumn(1)"></div>
-      <div class="cell" id="cell52" onclick="selectColumn(2)"></div>
-      <div class="cell" id="cell53" onclick="selectColumn(3)"></div>
-      <div class="cell" id="cell54" onclick="selectColumn(4)"></div>
-      <div class="cell" id="cell55" onclick="selectColumn(5)"></div>
-      <div class="cell" id="cell56" onclick="selectColumn(6)"></div>
-    </div>
-  </div>
-
-<input id="resetButton" type="button" value="Reset" onclick="resetGrid()" />
-</br>
-</br>
-<!--
+            <input id="resetButton" type="button" value="Reset" onclick="resetGrid()" />
+            <br />
 <center>
   <a href="http://www.101Computing.net/connect4-challenge/" target="_blank">Thank you to 101Computing.net for tutorial</a>
 </center>
--->
-  </body>
+</div>
     )
 }
+
 export default con4
 
 //Thank you to www.101Computing.net/connect4-challenge/for base javascript code
@@ -95,9 +93,9 @@ var grid = [
 ];
 
 //A function used to add a token (when possible) based on the selected column
-function selectColumn(col) 
+function selectColumn(col)
 {
-  if (player==1 && gameOver == false) 
+  if (player==1 && gameOver == false)
   {
     for(let i = 5; i > -1; i--)
     {
@@ -117,7 +115,7 @@ function selectColumn(col)
       player=2;
       document.getElementById("colorTurn").innerHTML="Red's Turn";
     }
-  } 
+  }
   else if(vsAI == false && player==2 && gameOver == false)
   {
     for(let i = 5; i > -1; i--)
@@ -333,7 +331,7 @@ function checkForWin(col)
 function refreshGrid() {
   for (var row = 0; row < 6; row++) {
     for (var col = 0; col < 7; col++) {
-      if (grid[row][col]==0) { 
+      if (grid[row][col]==0) {
                 document.getElementById("cell"+row+col).style.backgroundColor="#FFFFFF";
       } else if (grid[row][col]==1) { //1 for yellow
                 document.getElementById("cell"+row+col).style.backgroundColor="#FFFF00";
@@ -345,7 +343,7 @@ function refreshGrid() {
 }
 
 //Reset all values to 0
-function resetGrid() 
+function resetGrid()
 {
   for(let i = 0; i < 6; i++)
   {
